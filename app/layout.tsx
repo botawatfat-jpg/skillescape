@@ -10,10 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jobescape.me"),
+  metadataBase: new URL("https://Skillescape.me"),
   title: {
-    default: "Jobescape - Start Earning as an AI-Powered Freelancer",
-    template: "%s | Jobescape",
+    default: "Skillescape - Start Earning as an AI-Powered Freelancer",
+    template: "%s | Skillescape",
   },
   description:
     "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     "social media manager",
     "facebook ads",
   ],
-  authors: [{ name: "Jobescape" }],
+  authors: [{ name: "Skillescape" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jobescape.me",
-    siteName: "Jobescape",
-    title: "Jobescape - Start Earning as an AI-Powered Freelancer",
+    url: "https://Skillescape.me",
+    siteName: "Skillescape",
+    title: "Skillescape - Start Earning as an AI-Powered Freelancer",
     description:
       "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jobescape - Start Earning as an AI-Powered Freelancer",
+    title: "Skillescape - Start Earning as an AI-Powered Freelancer",
     description:
       "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
   },

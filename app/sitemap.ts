@@ -5,7 +5,7 @@ import { MetadataRoute } from "next";
  * Next.js 15/16 - автоматическая генерация sitemap.xml
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jobescape.me";
+  const baseUrl = "https://Skillescape.me";
 
   return [
     {

@@ -6,8 +6,8 @@ import { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Jobescape - AI-Powered Freelancing Platform",
-    short_name: "Jobescape",
+    name: "Skillescape - AI-Powered Freelancing Platform",
+    short_name: "Skillescape",
     description:
       "Learn to build AI agents and start your freelancing journey",
     start_url: "/",

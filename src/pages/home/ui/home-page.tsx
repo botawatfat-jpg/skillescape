@@ -36,7 +36,9 @@ export const HomePage: React.FC = () => {
       </AnimatedSection>
 
       <AnimatedSection direction="right" delay={0.2}>
-        <Courses />
+        <div id="courses">
+          <Courses />
+        </div>
       </AnimatedSection>
 
       <AnimatedSection direction="up" delay={0}>
@@ -44,7 +46,9 @@ export const HomePage: React.FC = () => {
       </AnimatedSection>
 
       <AnimatedSection direction="left" delay={0.1}>
-        <HowItWorks />
+        <div id="how-it-works">
+          <HowItWorks />
+        </div>
       </AnimatedSection>
 
       <AnimatedSection direction="right" delay={0.2}>
@@ -56,13 +60,17 @@ export const HomePage: React.FC = () => {
       </AnimatedSection>
 
       <AnimatedSection direction="up" delay={0.2}>
-        <SocialProof />
+        <div id="reviews">
+          <SocialProof />
+        </div>
       </AnimatedSection>
 
       {/* FAQ с Suspense - единственный тяжелый client component */}
       <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
         <AnimatedSection direction="right" delay={0.1}>
-          <Faq />
+          <div id="faq">
+            <Faq />
+          </div>
         </AnimatedSection>
       </Suspense>
 
@@ -71,7 +79,9 @@ export const HomePage: React.FC = () => {
       </AnimatedSection>
 
       <AnimatedSection direction="up" delay={0}>
-        <Footer />
+        <div id="contact">
+          <Footer />
+        </div>
       </AnimatedSection>
     </>
   );

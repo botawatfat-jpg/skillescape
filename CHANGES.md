@@ -1,4 +1,4 @@
-# 🚀 Изменения и Оптимизации - Jobescape
+# 🚀 Изменения и Оптимизации - Skillescape
 
 ## 📋 Краткое резюме
 
@@ -176,10 +176,10 @@ export async function fetchCourses() {
 **Метаданные в `app/layout.tsx`:**
 ```typescript
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jobescape.me"),
+  metadataBase: new URL("https://Skillescape.me"),
   title: {
-    default: "Jobescape - AI-Powered Freelancer",
-    template: "%s | Jobescape",
+    default: "Skillescape - AI-Powered Freelancer",
+    template: "%s | Skillescape",
   },
   description: "...",
   keywords: [...],

@@ -1,4 +1,4 @@
-# 🚀 Jobescape - AI-Powered Freelancing Platform
+# 🚀 Skillescape - AI-Powered Freelancing Platform
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.1-black)
 ![React](https://img.shields.io/badge/React-19.2-blue)
@@ -211,7 +211,7 @@ MIT License - feel free to use for your projects
 
 ## 🔗 Links
 
-- **Website:** [https://jobescape.me](https://jobescape.me)
+- **Website:** [https://Skillescape.me](https://Skillescape.me)
 - **Documentation:** [Next.js Docs](https://nextjs.org/docs)
 
 ---

@@ -1,14 +1,13 @@
 export const textConfig = {
-  logo: "Jobescape",
-  
+  logo: "Skillescape",
+
   header: {
     navigation: [
       { label: "Courses", href: "#courses" },
       { label: "How it works", href: "#how-it-works" },
-      { label: "Testimonials", href: "#testimonials" },
+      { label: "Testimonials", href: "#reviews" },
       { label: "FAQ", href: "#faq" },
       { label: "Contact", href: "#contact" },
-      { label: "Reviews", href: "#reviews" },
     ],
     loginButton: "Login",
     startButton: "Start Now",
@@ -18,7 +17,8 @@ export const textConfig = {
     title: "Start Earning as an",
     titleHighlight: "AI-Powered",
     titleEnd: "Freelancer",
-    description: "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
+    description:
+      "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
     button: "Get Your Freelancing Plan",
     cta: "Take the FREE quiz to get a personalized learning plan to earn from home!",
     badges: {
@@ -31,24 +31,28 @@ export const textConfig = {
     section1: {
       title: "Earn or",
       titleHighlight: "Get Your Money Back",
-      description: "We teach a real skill-you will learn to build AI agents that helps businesses: write copy, automate workflows, and create content. If you do not land a client and earn within 3 months - we will give you your money back.",
+      description:
+        "We teach a real skill-you will learn to build AI agents that helps businesses: write copy, automate workflows, and create content. If you do not land a client and earn within 3 months - we will give you your money back.",
     },
     section2: {
       title: "But What You Get",
       cards: [
         {
           title: "A Personalized Learning Plan",
-          description: "Learn at your own pace-focused on what suits you best: writing, marketing or automation",
+          description:
+            "Learn at your own pace-focused on what suits you best: writing, marketing or automation",
           image: "/assets/cta-bento/bento1.png",
         },
         {
           title: "Access to AI Assistants",
-          description: "30+ top tools and GPT-powered bots at your fingertips-to speed up your work and handle 80% of the routine.",
+          description:
+            "30+ top tools and GPT-powered bots at your fingertips-to speed up your work and handle 80% of the routine.",
           image: "/assets/cta-bento/bento2.png",
         },
         {
           title: "Step by Step Guides and Templates",
-          description: "No empty theory. You get ready-to-use examples, checklist, and templates to apply right away",
+          description:
+            "No empty theory. You get ready-to-use examples, checklist, and templates to apply right away",
           image: "/assets/cta-bento/bento3.png",
         },
       ],
@@ -62,28 +66,32 @@ export const textConfig = {
         title: "Freelance Copywriter",
         info: ["5 modules", "45 lessons", "15 learning hours"],
         status: "Course",
-        description: "Master persuasive writing that sells-from attention grabbing headlines to landing pages, ad copy, and email sequences. Learn  the psychology of buying, proven copy formulas, and how to freelance with confidence using AI tools.",
+        description:
+          "Master persuasive writing that sells-from attention grabbing headlines to landing pages, ad copy, and email sequences. Learn  the psychology of buying, proven copy formulas, and how to freelance with confidence using AI tools.",
         image: "/assets/courses/1.png",
       },
       {
         title: "Media Buyer/Facebook Ads Manager",
         info: ["6 modules", "48 lessons", "16 learning hours"],
         status: "Course",
-        description: "Learn how to launch, scale, and optimize Facebook & Instagram ad campaigns that convert. This track is ideal for those who want to freelance with e-commerce brands, coaches, or digital products.",
+        description:
+          "Learn how to launch, scale, and optimize Facebook & Instagram ad campaigns that convert. This track is ideal for those who want to freelance with e-commerce brands, coaches, or digital products.",
         image: "/assets/courses/2.png",
       },
       {
         title: "Social Media Manager",
         info: ["6 modules", "46 lessons", "13 learning hours"],
         status: "Course",
-        description: "Learn how to grow and manage social media accounts like a pro.  From content creation to scheduling, analytics, and trendspotting- you will master Instagram, Tiktok, and other platforms. Plus  discover how to go viral and turn view into real income.",
+        description:
+          "Learn how to grow and manage social media accounts like a pro.  From content creation to scheduling, analytics, and trendspotting- you will master Instagram, Tiktok, and other platforms. Plus  discover how to go viral and turn view into real income.",
         image: "/assets/courses/3.png",
       },
       {
         title: "AI Powered Problem Solver",
         info: ["6 modules", "48 lessons", "16 learning hours"],
         status: "Course",
-        description: "As an freelancer, you will leverage powerful tools like ChatGPT,  Midjourney, and Make.com to deliver high-impact services-from  content generation to automation and digital productivity. You will  learn how to create visuals, write faster and built bots.",
+        description:
+          "As an freelancer, you will leverage powerful tools like ChatGPT,  Midjourney, and Make.com to deliver high-impact services-from  content generation to automation and digital productivity. You will  learn how to create visuals, write faster and built bots.",
         image: "/assets/courses/4.png",
       },
     ],
@@ -102,34 +110,39 @@ export const textConfig = {
         number: 1,
         name: "Take the",
         highlight: "quiz 📋",
-        description: "We will create a learning path based on your time, interests, and skill level. Find out where to start and how to reach your first income faster.",
+        description:
+          "We will create a learning path based on your time, interests, and skill level. Find out where to start and how to reach your first income faster.",
       },
       {
         number: 2,
         name: "Get access to",
         highlight: "courses 📚",
-        description: "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
+        description:
+          "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
       },
       {
         number: 3,
         name: "Use",
         highlight: "🚀 20+",
         nameEnd: "AI Assistants",
-        description: "Ready-made bots will help with tasks like writing, presentations, idea generation, and creative work-based on real client cases.",
+        description:
+          "Ready-made bots will help with tasks like writing, presentations, idea generation, and creative work-based on real client cases.",
       },
       {
         number: 4,
         name: "Get support and",
         highlight: "ready-to-use 👌",
         nameEnd: "templates",
-        description: "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
+        description:
+          "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
       },
       {
         number: 5,
         name: "Start offering",
         highlight: "💻️ your",
         nameEnd: "services",
-        description: "Work through freelance platforms or connect with clients directly. Our courses give you everything to start earning.",
+        description:
+          "Work through freelance platforms or connect with clients directly. Our courses give you everything to start earning.",
       },
     ],
   },
@@ -223,31 +236,34 @@ export const textConfig = {
     subtitle: "Answers to frequently asked questions.",
     items: [
       {
-        question: "What Jobescape is?",
-        answer: "Jobescape is a comprehensive platform designed to help you start and grow your freelancing career. We provide step-by-step courses, resources, and guidance to help you succeed in the freelancing world.",
+        question: "What Skillescape is?",
+        answer:
+          "Skillescape is a comprehensive platform designed to help you start and grow your freelancing career. We provide step-by-step courses, resources, and guidance to help you succeed in the freelancing world.",
       },
       {
         question: "How can I start?",
-        answer: "Getting started is easy! Simply sign up for an account, browse our available courses, and begin your learning journey. Our courses are designed for all skill levels, from complete beginners to experienced freelancers.",
+        answer:
+          "Getting started is easy! Simply sign up for an account, browse our available courses, and begin your learning journey. Our courses are designed for all skill levels, from complete beginners to experienced freelancers.",
       },
       {
         question: "How can I cancel subscription?",
-        answer: "You can cancel your subscription at any time from your account settings. Go to Settings > Subscription > Cancel Subscription. Your access will continue until the end of your billing period.",
+        answer:
+          "You can cancel your subscription at any time from your account settings. Go to Settings > Subscription > Cancel Subscription. Your access will continue until the end of your billing period.",
       },
     ],
     contact: {
       title: "Still have questions?",
       text: "Feel free to contact our Support Team via the live messenger or email",
-      email: "support@jobescape.me",
+      email: "support@Skillescape.me",
       button: "Contact Us",
     },
   },
 
   footer: {
     socialLinks: {
-      facebook: "https://www.facebook.com/jobescape",
-      youtube: "https://www.youtube.com/jobescape",
-      instagram: "https://www.instagram.com/jobescape",
+      facebook: "https://www.facebook.com/Skillescape",
+      youtube: "https://www.youtube.com/Skillescape",
+      instagram: "https://www.instagram.com/Skillescape",
     },
     policy: ["Privacy Policy", "Subscription Policy", "Terms & Conditions"],
   },

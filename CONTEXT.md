@@ -1116,8 +1116,8 @@ When adding new features:
 
 ## Brand Information
 
-**Project Name**: Jobescape (formerly JobJam)  
-**Domain**: https://jobescape.me  
+**Project Name**: Skillescape (formerly JobJam)  
+**Domain**: https://Skillescape.me  
 **Purpose**: AI-Powered Freelancing Platform - Teaching AI agents for business tasks
 
 ---

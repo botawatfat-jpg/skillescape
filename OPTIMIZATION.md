@@ -1,4 +1,4 @@
-# Next.js 15/16 Оптимизация - Jobescape
+# Next.js 15/16 Оптимизация - Skillescape
 
 ## 📋 Обзор оптимизаций
 
@@ -103,8 +103,8 @@ export const CacheStrategy = {
 **Метаданные:**
 ```typescript
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jobescape.me"),
-  title: { default: "...", template: "%s | Jobescape" },
+  metadataBase: new URL("https://Skillescape.me"),
+  title: { default: "...", template: "%s | Skillescape" },
   description: "...",
   keywords: [...],
   openGraph: { ... },

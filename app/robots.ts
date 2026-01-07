@@ -5,7 +5,7 @@ import { MetadataRoute } from "next";
  * Next.js 15/16 - автоматическая генерация robots.txt
  */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://jobescape.me";
+  const baseUrl = "https://Skillescape.me";
 
   return {
     rules: [
