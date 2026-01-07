@@ -1,0 +1,139 @@
+.socialproof {
+  padding: 80px 0;
+  width: 1152px;
+  margin: 0 auto;
+  background-image: url("/assets/hero-bg.svg");
+}
+
+.title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  margin-bottom: 64px;
+}
+
+.grid {
+  column-count: 3;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+  height: fit-content;
+  break-inside: avoid;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.date {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #666;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  color: #00b67a;
+  font-size: 20px;
+}
+
+.reviewText {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+}
+
+@media (max-width: 1280px) {
+  .socialproof {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .card {
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .cardHeader {
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .reviewText {
+    font-size: 16px;
+  }
+}

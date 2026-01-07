@@ -1,0 +1,41 @@
+.footer {
+  background: var(--color-footer-bg);
+  color: var(--color-white);
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.policyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  a {
+    color: var(--color-white);
+    font-size: 24px;
+  }
+}

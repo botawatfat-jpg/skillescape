@@ -1,0 +1,174 @@
+.faq {
+  padding: 96px 0px;
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.suptitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-gray);
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.accordionWrapper {
+  max-width: 1152px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.accordionButton:hover {
+  opacity: 0.7;
+}
+
+.accordionQuestion {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.accordionIcon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+  color: #000;
+}
+
+.accordionIconOpen {
+  transform: rotate(270deg);
+}
+
+.accordionContent {
+  padding: 0 0 32px 0;
+  animation: slideDown 0.3s ease;
+}
+
+.accordionContent p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: #5a5a61;
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactSection {
+  margin-top: 40px;
+  text-align: center;
+  background: #fafafa;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.contactTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  margin: 0 0 7px 0;
+}
+
+.contactText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 24px 0;
+  color: var(--color-gray);
+}
+
+.emailLink {
+  color: #4f86ed;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.emailLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1280px) {
+  .faq {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .suptitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .accordionWrapper {
+    max-width: 100%;
+  }
+
+  .accordionQuestion {
+    font-size: 14px;
+  }
+
+  .accordionContent p {
+    font-size: 16px;
+  }
+
+  .contactSection {
+    margin-top: 32px;
+    padding: 20px;
+  }
+
+  .contactTitle {
+    font-size: 20px;
+  }
+
+  .contactText {
+    font-size: 14px;
+  }
+
+  .contactButton {
+    width: 100%;
+  }
+}

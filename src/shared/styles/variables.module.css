@@ -1,0 +1,17 @@
+/* Глобальные CSS переменные для переиспользования */
+
+:root {
+  /* Brand Colors */
+  --color-white: #f4f4f5;
+  --color-accent-blue: #2563eb;
+  --color-accent-orange: #f59e0b;
+  --color-gray: #71717a;
+  --color-black: #171717;
+  --color-green: #30a46c;
+  --color-footer-bg: #1e293b;
+
+  /* Typography */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Courier New", monospace;
+}

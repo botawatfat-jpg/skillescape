@@ -1,0 +1,145 @@
+.courses {
+  padding: 80px 64px;
+
+  .titleContainer {
+    max-width: 1152px;
+    margin: 0 auto;
+
+    .title {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 16px;
+    margin-top: 64px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    border-radius: 16px;
+    padding: 28px;
+    background: #fafafa;
+    width: 49%;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    @media (max-width: 1280px) {
+      width: 100%;
+    }
+
+    .cardContent {
+      .status {
+        border-radius: 9999px;
+        padding: 2px 10px;
+        height: 20px;
+        background: var(--color-accent-blue);
+        color: var(--color-white);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 133%;
+        width: fit-content;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 100%;
+        margin-bottom: 10px;
+      }
+
+      .info {
+        display: flex;
+        gap: 16px;
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+        }
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--color-gray);
+        margin-top: 32px;
+      }
+    }
+
+    .cardImg {
+      width: 136px;
+      height: 136px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 1280px) {
+  .courses {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .titleContainer .title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .card {
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cardContent .title {
+    font-size: 20px;
+  }
+
+  .cardContent .info {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cardContent .info span {
+    font-size: 14px;
+  }
+
+  .cardContent .description {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .cardImg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .cardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
