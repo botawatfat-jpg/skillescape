@@ -40,19 +40,19 @@ export const textConfig = {
         {
           title: "Your Personalized Learning Plan",
           description:
-            "Get a learning path built around your goals — whether you want to master writing, digital marketing, or automation. Move at your own pace and watch your progress grow step by step.",
+            "Get a learning path built around your goals - whether you want to master writing, digital marketing, or automation",
           image: "/assets/cta-bento/bento1.png",
         },
         {
-          title: "Access to 30+ AI Assistants",
+          title: "Access to 50+ AI Assistants",
           description:
-            "Unlock a toolbox of powerful AI bots that help you research, write, plan, organize, and automate repetitive tasks. Let AI handle up to **80% of the routine** so you can focus on the work that actually grows your income.",
+            "Access 50+ advanced tools and GPT-driven assistants that boost your productivity and automate up to 80% of repetitive work.",
           image: "/assets/cta-bento/bento2.png",
         },
         {
           title: " Step-by-Step Templates & Ready-Made Systems",
           description:
-            "No long theory or confusing tutorials. You get practical examples, checklists, and done-for-you templates you can apply instantly — including automated workflows you can replicate for real clients.",
+            "No fluff. Just ready-to-use examples, checklists, and templates you can apply right away.",
           image: "/assets/cta-bento/bento3.png",
         },
       ],
@@ -60,7 +60,7 @@ export const textConfig = {
   },
 
   courses: {
-    title: "Your Learning Tracks",
+    title: "Learning Tracks",
     items: [
       {
         title: "Freelance Copywriter",
@@ -98,9 +98,9 @@ export const textConfig = {
   },
 
   takeQuiz: {
-    title: "!Not Sure Where to Start? Let’s Figure It Out Together.",
+    title: "Not Sure? Take a Quiz!",
     description: "Find your path in under 5 minute",
-    button: "Get My Personalized Plan",
+    button: "Get My Freelancing Plan Now",
   },
 
   howItWorks: {
@@ -111,14 +111,14 @@ export const textConfig = {
         name: "Take a",
         highlight: "quizz 📋",
         description:
-          "We’ll map out a personalized learning journey based on your goals, schedule, and experience. Discover exactly where to begin and how to reach your first income faster.",
+          "Get a personalized learning path based on your goals, time, and experience",
       },
       {
         number: 2,
         name: "Get access to",
         highlight: "courses 📚",
         description:
-          "Unlock step-by-step lessons on freelancing, AI automation, bot building, and content creation. Follow the roadmap at your own pace and apply each step instantly.",
+          "Access step-by-step lessons on freelancing, AI automation, bot building, and content creation",
       },
       {
         number: 3,
@@ -126,7 +126,7 @@ export const textConfig = {
         highlight: "🚀 50+",
         nameEnd: "AI Assistants",
         description:
-          "Work smarter with ready-made AI tools that help with writing, presentations, idea generation, automation, and real client-style tasks.",
+          "Boost your workflow with ready-made tools for writing, ideas, automation, and real client tasks",
       },
       {
         number: 4,
@@ -134,7 +134,7 @@ export const textConfig = {
         highlight: "ready-to-use 👌",
         nameEnd: "templates",
         description:
-          "No guesswork - you get practical templates, checklists, and clear examples. Simply follow the process and build real projects as you go.",
+          "Follow clear templates, checklists, and examples - no guesswork, just action",
       },
       {
         number: 5,
@@ -142,13 +142,13 @@ export const textConfig = {
         highlight: "💼 your",
         nameEnd: "services",
         description:
-          "Use your new skills to take on clients or list services on freelancing platforms. Everything you learn prepares you to start earning quickly and confidently.",
+          "Use your new skills to land clients or list services online and start earning confidently",
       },
     ],
   },
 
   fitForYou: {
-    title: "Who This Is Perfect For",
+    title: "Perfect For",
     subtitle: "if you are a…",
     images: [
       "/assets/fitforyou/1.png",

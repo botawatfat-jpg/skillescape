@@ -127,8 +127,7 @@
   }
 
   .cardContent .description {
-    font-size: 14px;
-    margin-top: 16px;
+    display: none;
   }
 
   .cardImg {
