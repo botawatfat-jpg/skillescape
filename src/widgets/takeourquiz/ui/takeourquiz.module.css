@@ -38,6 +38,8 @@
 .image {
   img {
     height: 488px;
+    object-fit: cover;
+    width: 100%;
   }
 }
 @media (max-width: 1280px) {
@@ -75,7 +77,6 @@
   .image {
     img {
       height: 500px;
-      object-fit: cover;
       object-position: -100px 0;
     }
   }

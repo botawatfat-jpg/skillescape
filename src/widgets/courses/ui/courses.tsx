@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./courses.module.css";
-import Image from "next/image";
 import { textConfig } from "@/shared/config/text-config";
 
 export const Courses: React.FC = () => {
@@ -24,17 +23,6 @@ export const Courses: React.FC = () => {
                   ))}
                 </h5>
                 <p className={styles.description}>{course.description}</p>
-              </div>
-
-              <div className={styles.cardImg}>
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  width={236}
-                  height={236}
-                  sizes="(max-width: 768px) 100vw, 236px"
-                  loading="lazy"
-                />
               </div>
             </div>
           ))}
