@@ -74,10 +74,6 @@ export const HomePage: React.FC = () => {
         </AnimatedSection>
       </Suspense>
 
-      <AnimatedSection direction="left" delay={0.2}>
-        <TakeOurQuiz reverse />
-      </AnimatedSection>
-
       <AnimatedSection direction="up" delay={0}>
         <div id="contact">
           <Footer />

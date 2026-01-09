@@ -18,41 +18,41 @@ export const textConfig = {
     titleHighlight: "AI-Powered",
     titleEnd: "Freelancer",
     description:
-      "We will teach you how to build AI agents that handle business tasks like writing, content creation, and automation without any experience.",
-    button: "Get Your Freelancing Plan",
-    cta: "Take the FREE quiz to get a personalized learning plan to earn from home!",
+      "We’ll show you how to create simple AI agents that help businesses with tasks like writing, content creation, customer support, and automation - even if you’ve never worked with AI before",
+    button: "Start My AI Freelancing Path",
+    cta: "Take the FREE quiz to receive a personalized roadmap and start earning from home!",
     badges: {
-      users: "80k Users",
-      trustpilot: "4.5 Trustpilot",
+      users: "100k+ learners",
+      trustpilot: "4.5 user rating",
     },
   },
 
   cta: {
     section1: {
-      title: "Earn or",
-      titleHighlight: "Get Your Money Back",
+      title: "Earn - or",
+      titleHighlight: "Get Every Cent Back",
       description:
-        "We teach a real skill-you will learn to build AI agents that helps businesses: write copy, automate workflows, and create content. If you do not land a client and earn within 3 months - we will give you your money back.",
+        "You’ll master a real, in-demand skill: building AI agents that write, automate, and create for businesses. And if you don’t get your first client within 90 days, we’ll send your money back - simple as that.",
     },
     section2: {
-      title: "But What You Get",
+      title: "Your Personalized Learning Plan",
       cards: [
         {
-          title: "A Personalized Learning Plan",
+          title: "Your Personalized Learning Plan",
           description:
-            "Learn at your own pace-focused on what suits you best: writing, marketing or automation",
+            "Get a learning path built around your goals — whether you want to master writing, digital marketing, or automation. Move at your own pace and watch your progress grow step by step.",
           image: "/assets/cta-bento/bento1.png",
         },
         {
-          title: "Access to AI Assistants",
+          title: "Access to 30+ AI Assistants",
           description:
-            "30+ top tools and GPT-powered bots at your fingertips-to speed up your work and handle 80% of the routine.",
+            "Unlock a toolbox of powerful AI bots that help you research, write, plan, organize, and automate repetitive tasks. Let AI handle up to **80% of the routine** so you can focus on the work that actually grows your income.",
           image: "/assets/cta-bento/bento2.png",
         },
         {
-          title: "Step by Step Guides and Templates",
+          title: " Step-by-Step Templates & Ready-Made Systems",
           description:
-            "No empty theory. You get ready-to-use examples, checklist, and templates to apply right away",
+            "No long theory or confusing tutorials. You get practical examples, checklists, and done-for-you templates you can apply instantly — including automated workflows you can replicate for real clients.",
           image: "/assets/cta-bento/bento3.png",
         },
       ],
@@ -60,14 +60,14 @@ export const textConfig = {
   },
 
   courses: {
-    title: "Our Courses",
+    title: "Your Learning Tracks",
     items: [
       {
         title: "Freelance Copywriter",
         info: ["5 modules", "45 lessons", "15 learning hours"],
         status: "Course",
         description:
-          "Master persuasive writing that sells-from attention grabbing headlines to landing pages, ad copy, and email sequences. Learn  the psychology of buying, proven copy formulas, and how to freelance with confidence using AI tools.",
+          "Develop the core writing skills that businesses pay for. You’ll learn how to craft attention-grabbing headlines, engaging landing pages, high-converting ads, and persuasive email sequences. We cover the psychology behind effective messaging, practical writing formulas, and how to confidently offer copywriting services using AI tools.",
         image: "/assets/courses/1.png",
       },
       {
@@ -75,7 +75,7 @@ export const textConfig = {
         info: ["6 modules", "48 lessons", "16 learning hours"],
         status: "Course",
         description:
-          "Learn how to launch, scale, and optimize Facebook & Instagram ad campaigns that convert. This track is ideal for those who want to freelance with e-commerce brands, coaches, or digital products.",
+          "Master the essentials of running profitable Facebook & Instagram ads. You’ll learn how to launch campaigns, analyze performance, scale winning ads, and help brands grow through paid traffic. Perfect if you want to freelance with online stores, coaches, or digital businesses that rely on consistent leads and sales.",
         image: "/assets/courses/2.png",
       },
       {
@@ -83,7 +83,7 @@ export const textConfig = {
         info: ["6 modules", "46 lessons", "13 learning hours"],
         status: "Course",
         description:
-          "Learn how to grow and manage social media accounts like a pro.  From content creation to scheduling, analytics, and trendspotting- you will master Instagram, Tiktok, and other platforms. Plus  discover how to go viral and turn view into real income.",
+          "Learn how to build and manage social media accounts professionally. From content planning and scheduling to analytics, trends, and growth strategies — you’ll understand what makes content go viral. You’ll practice creating scroll-stopping posts for Instagram, TikTok, and other platforms, while learning how to turn traffic into income.",
         image: "/assets/courses/3.png",
       },
       {
@@ -91,16 +91,16 @@ export const textConfig = {
         info: ["6 modules", "48 lessons", "16 learning hours"],
         status: "Course",
         description:
-          "As an freelancer, you will leverage powerful tools like ChatGPT,  Midjourney, and Make.com to deliver high-impact services-from  content generation to automation and digital productivity. You will  learn how to create visuals, write faster and built bots.",
+          "Discover how to use modern AI tools—such as ChatGPT, Midjourney, and automation platforms—to deliver high-impact services. You’ll learn how to create visuals, speed up content production, automate workflows, and build practical AI bots. This track teaches you how to solve real business problems with AI and offer ready-to-sell solutions.",
         image: "/assets/courses/4.png",
       },
     ],
   },
 
   takeQuiz: {
-    title: "Not Sure? Take a Quiz!",
-    description: "Find your path in under 5 minutes",
-    button: "Get Your Freelancing Plan Now",
+    title: "!Not Sure Where to Start? Let’s Figure It Out Together.",
+    description: "Find your path in under 5 minute",
+    button: "Get My Personalized Plan",
   },
 
   howItWorks: {
@@ -108,25 +108,25 @@ export const textConfig = {
     steps: [
       {
         number: 1,
-        name: "Take the",
-        highlight: "quiz 📋",
+        name: "Take a",
+        highlight: "quizz 📋",
         description:
-          "We will create a learning path based on your time, interests, and skill level. Find out where to start and how to reach your first income faster.",
+          "We’ll map out a personalized learning journey based on your goals, schedule, and experience. Discover exactly where to begin and how to reach your first income faster.",
       },
       {
         number: 2,
         name: "Get access to",
         highlight: "courses 📚",
         description:
-          "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
+          "Unlock step-by-step lessons on freelancing, AI automation, bot building, and content creation. Follow the roadmap at your own pace and apply each step instantly.",
       },
       {
         number: 3,
         name: "Use",
-        highlight: "🚀 20+",
+        highlight: "🚀 50+",
         nameEnd: "AI Assistants",
         description:
-          "Ready-made bots will help with tasks like writing, presentations, idea generation, and creative work-based on real client cases.",
+          "Work smarter with ready-made AI tools that help with writing, presentations, idea generation, automation, and real client-style tasks.",
       },
       {
         number: 4,
@@ -134,21 +134,21 @@ export const textConfig = {
         highlight: "ready-to-use 👌",
         nameEnd: "templates",
         description:
-          "Lessons on freelancing. AI automation, bot building, and content creation. Everything is step by step-just follow the plan and apply it.",
+          "No guesswork - you get practical templates, checklists, and clear examples. Simply follow the process and build real projects as you go.",
       },
       {
         number: 5,
         name: "Start offering",
-        highlight: "💻️ your",
+        highlight: "💼 your",
         nameEnd: "services",
         description:
-          "Work through freelance platforms or connect with clients directly. Our courses give you everything to start earning.",
+          "Use your new skills to take on clients or list services on freelancing platforms. Everything you learn prepares you to start earning quickly and confidently.",
       },
     ],
   },
 
   fitForYou: {
-    title: "It's a fit for you",
+    title: "Who This Is Perfect For",
     subtitle: "if you are a…",
     images: [
       "/assets/fitforyou/1.png",
@@ -162,7 +162,7 @@ export const textConfig = {
 
   takeOurQuiz: {
     title: "Take our FREE quiz to go to the next level in freelancing journey",
-    button: "Get Your Freelancing Plan Now",
+    button: "Start My AI Freelancing Path",
     images: {
       normal: "/assets/takeourquiz.png",
       reverse: "/assets/takeourquiz-reverse.png",
@@ -173,60 +173,76 @@ export const textConfig = {
     title: "Social Proof",
     reviews: [
       {
-        name: "So",
-        date: "December 04, 2024",
+        name: "Samantha Lee",
+        date: "December 12, 2025",
         rating: 5,
-        text: "Exceeded expectations. This lesson gives you the idea of what to expect in this freelancing journey and how to prepare yourself for it. That's the base for everyone in the future.",
-        initials: "SO",
+        text: "This program completely reshaped how I think about online income. I finally understood what steps to take instead of jumping from one idea to another. The lessons are clear, structured, and actually doable even after a full-time job. Highly recommend for anyone tired of guessing what to do next.",
+        initials: "SL",
         color: "#FF6B6B",
       },
       {
-        name: "Jesahavila Max",
-        date: "November 05, 2024",
+        name: "Daniel Ortiz",
+        date: "January 04, 2025",
         rating: 5,
-        text: "The company's reputation well respected. I think this company is really a wel run business. By reading all its course's contents, I'm really impressed. I see a lot of successful business ideas and steps mentioned in the content.",
-        initials: "JM",
+        text: "I used to believe earning with AI required strong technical skills. Turns out, it's all about following a simple step-by-step plan. I landed my first paying client in just 3 weeks. Honestly didn't expect it to work this well.",
+        initials: "DO",
         color: "#4ECDC4",
       },
       {
-        name: "Briana",
-        date: "December 04, 2024",
+        name: "Kiera Johnson",
+        date: "November 18, 2025",
         rating: 5,
-        text: "Why is freelancing a good source of income? This company is great for people who are looking to find more income but aren't sure where to start. They have step by step lessons that guide you through the process from beginning to the end. Have little to no experience? They will teach you. Have experience and want to prosper further with this company?",
-        initials: "BR",
+        text: "The mindset shift alone was worth it. I stopped doubting myself and finally started taking consistent action. Love how practical everything is - no fluff, just real strategies you can use immediately.",
+        initials: "KJ",
         color: "#95E1D3",
       },
       {
-        name: "Simon Paul",
-        date: "December 28, 2023",
+        name: "Michael Tran",
+        date: "December 27, 2025",
         rating: 5,
-        text: "Failure is worse enemy in progress. But changing my mindset helped me in 2023 in my little business. I do enjoy every moment when I learn something new. After deeply diving in these guidelines of this company I realised that it is not only doing business or job, it also shapes a person's mindset",
-        initials: "SP",
+        text: "The company is absolutely legit and the course is super well structured. I'm impressed by how beginner-friendly everything felt. I'm already building automations for two small businesses - this is the future.",
+        initials: "MT",
         color: "#A8E6CF",
       },
       {
-        name: "Lisa DeGroff",
-        date: "December 01, 2024",
+        name: "Arianna Silva",
+        date: "December 02, 2025",
         rating: 5,
-        text: "I have never thought of freelancing and am shocked to find opportunities, without a college degree.",
-        initials: "LD",
+        text: "I never imagined freelancing could be this accessible. As someone without a tech background, I always felt frozen. This program breaks everything down into tiny steps, and suddenly you feel capable. One of the best investments I made this year.",
+        initials: "AS",
         color: "#FFD93D",
       },
       {
-        name: "Mahta Teimourian",
-        date: "November 07, 2024",
+        name: "Liam Henderson",
+        date: "January 15, 2025",
         rating: 5,
-        text: "Absolutely recommended. It's wonderful how you teach all the crucial steps for Freelancing work! You make sure every beginner learns and same time your content has new ideas and important tips for people whom already in business!",
-        initials: "MT",
+        text: "The real game changer for me was the support. Whenever I got stuck, someone actually helped — not bots, real humans. I built my first AI chatbot in a weekend! Still shocked.",
+        initials: "LH",
         color: "#6BCB77",
       },
       {
-        name: "Luz Anabell Torres Jaramillo",
-        date: "December 04, 2024",
+        name: "Briana Carter",
+        date: "December 10, 2025",
         rating: 5,
-        text: "Honestly I feel like it's the best. opportunity to be better, this app is a great platform. I recommend it 100% Honestly I feel like it's the",
-        initials: "LT",
+        text: "If you're unsure where to start - this is the place. They guide you from absolute zero to actually applying your skills. Perfect for people who want to earn more without burning out.",
+        initials: "BC",
         color: "#B983FF",
+      },
+      {
+        name: "Mason Teimouri",
+        date: "January 07, 2025",
+        rating: 5,
+        text: "Absolutely recommend it. The lessons are simple, the examples are real, and the strategies actually make sense. I'm finally seeing progress after failing with 3 other programs.",
+        initials: "MT",
+        color: "#FF9A8B",
+      },
+      {
+        name: "Luz Moreno",
+        date: "December 08, 2024",
+        rating: 5,
+        text: "It gives you confidence. You don't just learn theory - you build real projects. Now I understand why so many people talk about AI automation as the easiest entry point to freelancing.",
+        initials: "LM",
+        color: "#FFB6C1",
       },
     ],
   },
@@ -236,19 +252,19 @@ export const textConfig = {
     subtitle: "Answers to frequently asked questions.",
     items: [
       {
-        question: "What Skillescape is?",
+        question: "What is Skillescape?",
         answer:
-          "Skillescape is a comprehensive platform designed to help you start and grow your freelancing career. We provide step-by-step courses, resources, and guidance to help you succeed in the freelancing world.",
+          "Skillescape is your path to independence through freelancing and AI. Learn at your own pace, from any location, and gain practical, in-demand skills. Build a career aligned with your goals and lifestyle. We provide flexibility, growth opportunities, and the ability to turn your work into something truly fulfilling.",
       },
       {
-        question: "How can I start?",
+        question: "How do I get started?",
         answer:
-          "Getting started is easy! Simply sign up for an account, browse our available courses, and begin your learning journey. Our courses are designed for all skill levels, from complete beginners to experienced freelancers.",
+          "If you're new to freelancing or AI and not sure where to begin - Skillescape makes it simple: 1. Create your account 2. Start with the beginner-friendly AI Starter Kit 3. Practice with real tools and step-by-step tasks 4. Follow your personalized plan to start completing client-ready projects. Inside your dashboard, you'll find a full onboarding guide showing exactly how to register and start learning.",
       },
       {
-        question: "How can I cancel subscription?",
+        question: "How can I cancel my subscription?",
         answer:
-          "You can cancel your subscription at any time from your account settings. Go to Settings > Subscription > Cancel Subscription. Your access will continue until the end of your billing period.",
+          "You can cancel your subscription at any time. We provide a short cancellation guide that explains each step clearly. If you still need help, simply contact our support team - we're always here to assist you.",
       },
     ],
     contact: {

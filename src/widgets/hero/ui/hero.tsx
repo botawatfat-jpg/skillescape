@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
           </div>
           <div className={styles.badges}>
             <div className={styles.badge}>
-              <span className={styles.badgeIcon}>👥</span>
+              <span className={styles.badgeIcon}>👩‍💻</span>
               <span className={styles.badgeText}>
                 {textConfig.hero.badges.users}
               </span>
