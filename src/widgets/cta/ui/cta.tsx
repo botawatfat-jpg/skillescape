@@ -23,11 +23,11 @@ export const Cta: React.FC = () => {
           <div className={styles.wrapper}>
             <div className={styles.imageCard}>
               <Image
-                src="/assets/cta-img.png"
+                src="/assets/cta-img.jpg"
                 alt="CTA"
-                width={481}
+                width={561}
                 height={591}
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 481px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 561px"
                 loading="lazy"
               />
             </div>

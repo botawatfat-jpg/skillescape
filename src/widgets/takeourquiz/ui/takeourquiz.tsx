@@ -29,6 +29,7 @@ export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
             height={488}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1233px"
             loading="lazy"
+            style={{ borderRadius: "16px" }}
           />
         </div>
       </div>

@@ -164,7 +164,7 @@ export const textConfig = {
     title: "Take our FREE quiz to go to the next level in freelancing journey",
     button: "Start My AI Freelancing Path",
     images: {
-      normal: "/assets/takeourquiz.png",
+      normal: "/assets/takeourquiz.jpg",
       reverse: "/assets/takeourquiz-reverse.png",
     },
   },

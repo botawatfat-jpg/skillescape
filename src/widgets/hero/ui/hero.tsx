@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
         <div className={styles.imageWrapper}>
           <div className={styles.image}>
             <Image
-              src="/assets/hero-img.png"
+              src="/assets/hero-img.jpg"
               alt="Hero"
               width={480}
               height={480}
