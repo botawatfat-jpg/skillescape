@@ -25,28 +25,31 @@ export const Cta: React.FC = () => {
               <Image
                 src="/assets/cta-img.jpg"
                 alt="CTA"
-                width={561}
-                height={591}
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 561px"
+                fill
+                style={{ objectFit: "cover" }}
                 loading="lazy"
               />
             </div>
             <div className={styles.cardsColumn}>
               <div className={styles.cardFlex}>
-                {textConfig.cta.section2.cards.slice(0, 2).map((card, index) => (
-                  <div key={index} className={styles.card}>
-                    <Image
-                      src={card.image}
-                      alt="CTA"
-                      width={321}
-                      height={118}
-                      sizes="(max-width: 768px) 100vw, 321px"
-                      loading="lazy"
-                    />
-                    <h3 className={styles.cardTitle}>{card.title}</h3>
-                    <p className={styles.cardDescription}>{card.description}</p>
-                  </div>
-                ))}
+                {textConfig.cta.section2.cards
+                  .slice(0, 2)
+                  .map((card, index) => (
+                    <div key={index} className={styles.card}>
+                      <Image
+                        src={card.image}
+                        alt="CTA"
+                        width={321}
+                        height={118}
+                        sizes="(max-width: 768px) 100vw, 321px"
+                        loading="lazy"
+                      />
+                      <h3 className={styles.cardTitle}>{card.title}</h3>
+                      <p className={styles.cardDescription}>
+                        {card.description}
+                      </p>
+                    </div>
+                  ))}
               </div>
               <div className={styles.cardLarge}>
                 <Image
