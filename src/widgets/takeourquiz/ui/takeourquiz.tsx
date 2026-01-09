@@ -1,12 +1,16 @@
+"use client";
+import Image from "next/image";
 import React from "react";
 import styles from "./takeourquiz.module.css";
-import Image from "next/image";
 import { textConfig } from "@/shared/config/text-config";
 import { QuizButton } from "@/features/quiz";
+import { useMediaQuery } from "react-responsive";
 
 export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
   reverse = false,
 }) => {
+  const isWidthSmall = useMediaQuery({ maxWidth: 1280 });
+
   return (
     <section className={styles.takeourquiz}>
       <div className={`${styles.container} ${reverse ? styles.reverse : ""}`}>
@@ -26,8 +30,7 @@ export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
             }
             alt="Take our quiz"
             width={1233}
-            height={488}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1233px"
+            height={isWidthSmall ? 600 : 488}
             loading="lazy"
             style={{ borderRadius: "16px" }}
           />
