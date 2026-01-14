@@ -1,3 +1,8 @@
+.icon {
+  margin: 0 auto 8px;
+  display: block;
+}
+
 .card {
   display: flex;
   flex-direction: column;

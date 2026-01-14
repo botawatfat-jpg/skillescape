@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.lottieContainer {
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.lottie {
+  background: transparent;
+  margin: 0px auto;
+  outline: none;
+  overflow: hidden;
+  max-width: 225px;
+  max-height: 400px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.button {
+  min-width: 400px;
+}
+
+@media (max-width: 1280px) {
+  .lottieContainer {
+    margin: 32px auto;
+  }
+
+  .button {
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .button {
+    min-width: 280px;
+  }
+}

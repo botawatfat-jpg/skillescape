@@ -9,6 +9,7 @@ interface CardOptionProps {
   name: string;
   value: string;
   label: string;
+  icon?: string;
   defaultChecked?: boolean;
   onChange?: (value: string) => void;
 }
@@ -17,6 +18,7 @@ export const CardOption: React.FC<CardOptionProps> = ({
   name,
   value,
   label,
+  icon,
   defaultChecked = false,
   onChange,
 }) => {
@@ -35,6 +37,15 @@ export const CardOption: React.FC<CardOptionProps> = ({
           onChange?.(e.target.value);
         }}
       />
+      {icon && (
+        <img
+          src={icon}
+          alt={label}
+          width={24}
+          height={24}
+          className={styles.icon}
+        />
+      )}
       <span className={styles.label}>{label}</span>
       <div className={styles.checkmark}>
         <Check size={20} />

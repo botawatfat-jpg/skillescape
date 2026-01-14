@@ -25,6 +25,20 @@ import {
   QuizPage20,
   QuizPage21,
   QuizPage22,
+  QuizPage23,
+  QuizPage24,
+  QuizPage25,
+  QuizPage26,
+  QuizPage27,
+  QuizPage28,
+  QuizPage29,
+  QuizPage30,
+  QuizPage31,
+  QuizPage32,
+  QuizPage33,
+  QuizPage34,
+  QuizPage35,
+  QuizPage36,
 } from "@/features/quiz/ui";
 import { useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -204,6 +218,112 @@ export const QuizQuestionsPage: React.FC = () => {
           content: <QuizPage22 />,
           progress: 0,
           title: "Income Goals",
+          withLayout: true,
+        };
+      case 23:
+        return {
+          content: <QuizPage23 />,
+          progress: 55,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 24:
+        return {
+          content: <QuizPage24 />,
+          progress: 58,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 25:
+        return {
+          content: <QuizPage25 />,
+          progress: 61,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 26:
+        return {
+          content: <QuizPage26 />,
+          progress: 65,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 27:
+        return {
+          content: <QuizPage27 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 28:
+        return {
+          content: <QuizPage28 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 29:
+        return {
+          content: <QuizPage29 />,
+          progress: 70,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 30:
+        return {
+          content: <QuizPage30 />,
+          progress: 73,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 31:
+        return {
+          content: <QuizPage31 />,
+          progress: 0,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 32:
+        return {
+          content: <QuizPage32 />,
+          progress: 76,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 33:
+        return {
+          content: <QuizPage33 />,
+          progress: 79,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 34:
+        return {
+          content: <QuizPage34 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 35:
+        return {
+          content: <QuizPage35 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 36:
+        return {
+          content: <QuizPage36 />,
+          progress: 0,
+          title: "",
           withLayout: true,
         };
       default:

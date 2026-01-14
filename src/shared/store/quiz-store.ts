@@ -41,6 +41,22 @@ interface QuizData {
   incomeGoal?: string;
   // Page 21
   financesNormal?: boolean;
+  // Page 23
+  workStyle?: string;
+  // Page 24
+  idealHours?: string;
+  // Page 25
+  fallingBehind?: number;
+  // Page 26
+  socialMediaTime?: string;
+  // Page 29
+  excitingThing?: string;
+  // Page 30
+  aiTools?: string[];
+  // Page 32
+  confidenceFactor?: string;
+  // Page 33
+  guidedPlan?: number;
 }
 
 interface QuizStore {
