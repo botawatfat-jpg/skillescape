@@ -1,18 +1,17 @@
-import React from "react";
 import { QuizTitle, QuizQuote, RatingScale } from "@/features/quiz/shared";
-import styles from "./quiz-page-16.module.css";
+import styles from "./quiz-page-17.module.css";
 import { useRouter } from "next/navigation";
 import { useQuizStore } from "@/shared/store";
 
-export const QuizPage16 = () => {
+export const QuizPage17 = () => {
   const router = useRouter();
   const { updateQuizData } = useQuizStore();
 
   const handleChange = (value: number) => {
-    updateQuizData({ moneyStress: value });
+    updateQuizData({ extraIncome: value });
     // Auto-redirect after 300ms
     setTimeout(() => {
-      router.push("/quiz/questions?pageId=17");
+      router.push("/quiz/questions?pageId=18");
     }, 300);
   };
 
@@ -21,12 +20,12 @@ export const QuizPage16 = () => {
       <QuizTitle>How true is this for you?</QuizTitle>
 
       <QuizQuote>
-        &quot;I constantly feel like I don&apos;t have enough money — and it stresses me
-        out.&quot;
+        &quot;I&apos;ve been thinking a lot about ways to earn extra income
+        lately&quot;
       </QuizQuote>
 
       <RatingScale
-        name="moneyStress"
+        name="extraIncome"
         minLabel="not at all"
         maxLabel="completely"
         onChange={handleChange}

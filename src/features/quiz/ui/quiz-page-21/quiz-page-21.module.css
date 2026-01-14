@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.icon {
+  color: #ef4444;
+}
+
+.section {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 6px;
+  padding: 16px;
+  max-width: 576px;
+}
+
+.sectionTitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 156%;
+  margin: 0 0 16px 0;
+}
+
+.sectionText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.button {
+  min-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .iconContainer {
+    margin-bottom: 20px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section {
+    padding: 24px;
+    margin: 24px 0;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .sectionText {
+    font-size: 15px;
+  }
+
+  .button {
+    min-width: 100%;
+  }
+}

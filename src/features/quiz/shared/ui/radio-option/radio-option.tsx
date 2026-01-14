@@ -7,7 +7,6 @@ interface RadioOptionProps {
   name: string;
   value: string;
   label: string;
-  defaultChecked?: boolean;
   variant?: "default" | "card";
   icon?: React.ReactNode;
   onChange?: () => void;
@@ -17,22 +16,29 @@ export const RadioOption: React.FC<RadioOptionProps> = ({
   name,
   value,
   label,
-  defaultChecked,
   variant = "default",
   icon,
   onChange,
 }) => {
   const isCard = variant === "card";
 
+  const handleClick = () => {
+    if (onChange) {
+      onChange();
+    }
+  };
+
   return (
-    <label className={cn(styles.option, isCard && styles.card)}>
+    <label
+      className={cn(styles.option, isCard && styles.card)}
+      onClick={handleClick}
+    >
       <input
         type="radio"
         name={name}
         value={value}
         className={styles.radio}
-        defaultChecked={defaultChecked}
-        onChange={onChange}
+        onClick={(e) => e.stopPropagation()}
       />
       {isCard && icon && <div className={styles.iconContainer}>{icon}</div>}
       <span className={styles.optionLabel}>{label}</span>

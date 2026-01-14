@@ -31,6 +31,16 @@ interface QuizData {
   independence?: number;
   // Page 16
   moneyStress?: number;
+  // Page 17
+  extraIncome?: number;
+  // Page 18
+  smarterWay?: number;
+  // Page 19
+  aiMeaning?: string;
+  // Page 20
+  incomeGoal?: string;
+  // Page 21
+  financesNormal?: boolean;
 }
 
 interface QuizStore {

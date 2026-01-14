@@ -316,7 +316,7 @@ export const textConfig = {
       ],
       footer: {
         text: "We will be glad to assist you via email. Please send your questions and feedback here or to",
-        email: "support@jobescape.me",
+        email: "support@Skillescape.me",
       },
     },
   },

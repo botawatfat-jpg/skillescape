@@ -19,6 +19,12 @@ import {
   QuizPage14,
   QuizPage15,
   QuizPage16,
+  QuizPage17,
+  QuizPage18,
+  QuizPage19,
+  QuizPage20,
+  QuizPage21,
+  QuizPage22,
 } from "@/features/quiz/ui";
 import { useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -151,7 +157,52 @@ export const QuizQuestionsPage: React.FC = () => {
           content: <QuizPage16 />,
           progress: 36,
           barSeparation: true,
-
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 17:
+        return {
+          content: <QuizPage17 />,
+          progress: 39,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 18:
+        return {
+          content: <QuizPage18 />,
+          progress: 42,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 19:
+        return {
+          content: <QuizPage19 />,
+          progress: 45,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 20:
+        return {
+          content: <QuizPage20 />,
+          progress: 48,
+          barSeparation: true,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 21:
+        return {
+          content: <QuizPage21 />,
+          progress: 0,
+          title: "Income Goals",
+          withLayout: true,
+        };
+      case 22:
+        return {
+          content: <QuizPage22 />,
+          progress: 0,
           title: "Income Goals",
           withLayout: true,
         };

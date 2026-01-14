@@ -1,0 +1,13 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .options {
+    gap: 12px;
+    margin-top: 24px;
+  }
+}

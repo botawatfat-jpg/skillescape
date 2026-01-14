@@ -5,3 +5,4 @@ export { QuizSubtitle } from "./quiz-subtitle";
 export { QuizDescription } from "./quiz-description";
 export { QuizQuote } from "./quiz-quote";
 export { RatingScale } from "./rating-scale";
+export { ProgressBlockers } from "./progress-blockers";
