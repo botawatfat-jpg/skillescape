@@ -30,7 +30,11 @@ export const Header: React.FC = () => {
         </nav>
         <div className={styles.actions}>
           <Button variant="secondary">{textConfig.header.loginButton}</Button>
-          <Button variant="primary">{textConfig.header.startButton}</Button>
+          <Link href="/quiz">
+            <Button variant="primary">
+              <Link href="/quiz">{textConfig.header.startButton}</Link>
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

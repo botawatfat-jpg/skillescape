@@ -1,0 +1,108 @@
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--color-white);
+}
+
+.option:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.option:has(.radio:checked) {
+  border-color: var(--color-black);
+  background: #f3f4f6;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.radio:checked {
+  border-color: var(--color-black);
+  background: var(--color-black);
+}
+
+.radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: var(--color-white);
+  border-radius: 50%;
+}
+
+.optionLabel {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+  flex: 1;
+}
+
+/* Card variant styles */
+.card .radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.card:has(.radio:checked) .iconContainer {
+  color: var(--color-black);
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  color: transparent;
+}
+
+.card:has(.radio:checked) .checkmark {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+@media (max-width: 1280px) {
+  .optionLabel {
+    font-size: 16px;
+  }
+
+  .iconContainer {
+    width: 36px;
+    height: 36px;
+  }
+}

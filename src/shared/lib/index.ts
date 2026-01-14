@@ -16,6 +16,7 @@ export {
   isValidPassword,
   validateForm,
 } from "./validation";
+export { cn } from "./cn";
 export type {
   WebVitalsMetric,
 } from "./performance";

@@ -1,0 +1,53 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.button {
+  min-width: 400px;
+  padding: 18px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-white);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .buttonContainer {
+    margin-top: 32px;
+  }
+
+  .button {
+    min-width: 320px;
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    min-width: 280px;
+  }
+}

@@ -1,0 +1,141 @@
+.container {
+  width: 100%;
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  max-width: 288px;
+  height: 368px;
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.9);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 368px;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.buttonText {
+  width: 100%;
+  padding: 10px 24px;
+  background: var(--color-accent-blue);
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Trust Indicators */
+.trustIndicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  color: var(--color-white);
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wheat {
+  width: 20px;
+  height: auto;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.indicatorContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.indicatorNumber {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.indicatorText {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.indicatorStars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-accent-orange);
+    color: var(--color-accent-orange);
+  }
+}
+
+@media (max-width: 1280px) {
+  .buttonText {
+    font-size: 16px;
+  }
+
+  .indicatorNumber {
+    font-size: 16px;
+  }
+
+  .indicatorText {
+    font-size: 12px;
+  }
+}

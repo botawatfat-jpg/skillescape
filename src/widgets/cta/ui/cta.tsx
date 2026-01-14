@@ -57,7 +57,6 @@ export const Cta: React.FC = () => {
                   alt="CTA"
                   width={707}
                   height={129}
-                  sizes="(max-width: 768px) 100vw, 707px"
                   loading="lazy"
                 />
                 <h3 className={styles.cardTitle} style={{ marginTop: 24 }}>

@@ -1,0 +1,54 @@
+.root {
+  background: linear-gradient(180deg, #1a4eda 0%, #1e3a8a 50%, #172554 100%);
+  min-height: 100vh;
+  padding: 0 24px;
+}
+
+.content {
+  color: var(--color-white);
+  margin: 0 auto;
+
+  h1 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 111%;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 156%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    padding: 16px 24px;
+  }
+
+  .content {
+    h1 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h5 {
+      font-size: 14px;
+    }
+  }
+}

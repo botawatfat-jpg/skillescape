@@ -53,4 +53,3 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
     </Button>
   );
 };
-

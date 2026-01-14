@@ -25,28 +25,28 @@ export const HomePage: React.FC = () => {
       <Header />
 
       {/* Hero - критический контент, рендерится сразу на сервере */}
-        <Hero />
+      <Hero />
 
       {/* Остальные секции - Server Components с client анимацией */}
-        <Cta />
+      <Cta />
 
-        <div id="courses">
-          <Courses />
-        </div>
+      <div id="courses">
+        <Courses />
+      </div>
 
-        <TakeQuiz />
+      <TakeQuiz />
 
-        <div id="how-it-works">
-          <HowItWorks />
-        </div>
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
 
-        <FitForYou />
+      <FitForYou />
 
-        <TakeOurQuiz />
+      <TakeOurQuiz />
 
-        <div id="reviews">
-          <SocialProof />
-        </div>
+      <div id="reviews">
+        <SocialProof />
+      </div>
 
       {/* FAQ с Suspense - единственный тяжелый client component */}
       <Suspense fallback={<div style={{ minHeight: "400px" }} />}>

@@ -1,0 +1,17 @@
+export * from "./quiz-page-1";
+export * from "./quiz-page-2";
+export * from "./quiz-page-3";
+export * from "./quiz-page-4";
+export * from "./quiz-page-5";
+export * from "./quiz-page-6";
+export * from "./quiz-page-7";
+export * from "./quiz-page-8";
+export * from "./quiz-page-9";
+export * from "./quiz-page-10";
+export * from "./quiz-page-11";
+export * from "./quiz-page-12";
+export * from "./quiz-page-13";
+export * from "./quiz-page-14";
+export * from "./quiz-page-15";
+export * from "./quiz-page-16";
+export { QuizButton } from "@/shared/ui/quiz-button/quiz-button";

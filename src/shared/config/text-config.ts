@@ -283,4 +283,41 @@ export const textConfig = {
     },
     policy: ["Privacy Policy", "Subscription Policy", "Terms & Conditions"],
   },
+
+  quiz: {
+    title: "Unlock your personal AI income plan to earn smarter",
+    subtitle: "Zero experience needed",
+    timer: "3-minute quiz.",
+    genderSelection: {
+      male: "Male",
+      female: "Female",
+    },
+    trustIndicators: {
+      users: {
+        number: "120 000+",
+        text: "new freelancers\nwith us",
+      },
+      rating: {
+        number: "4.6",
+        text: "on Trustpilot",
+      },
+      guarantee: {
+        number: "WIN WIN",
+        text: "Money back\nguarantee",
+      },
+    },
+    menu: {
+      title: "Docs",
+      items: [
+        { label: "Privacy policy", href: "/privacy" },
+        { label: "Money-back policy", href: "/money-back" },
+        { label: "Subscription Privacy", href: "/subscription-privacy" },
+        { label: "I already have an account", href: "/login" },
+      ],
+      footer: {
+        text: "We will be glad to assist you via email. Please send your questions and feedback here or to",
+        email: "support@jobescape.me",
+      },
+    },
+  },
 };

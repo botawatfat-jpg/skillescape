@@ -26,7 +26,7 @@ export const HowItWorks: React.FC = () => {
                     )}
                     {step.nameEnd && (
                       <>
-                        {step.number === 4 && <br />} {step.nameEnd}
+                        {" "} {step.nameEnd}
                       </>
                     )}
                   </h2>

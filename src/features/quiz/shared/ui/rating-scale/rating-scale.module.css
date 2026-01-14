@@ -1,0 +1,98 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scaleContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.option {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--color-white);
+  position: relative;
+}
+
+.option:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.option.selected {
+  border-color: var(--color-black);
+  background: #f3f4f6;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.number {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .scaleContainer {
+    gap: 12px;
+  }
+
+  .option {
+    width: 70px;
+    height: 70px;
+  }
+
+  .number {
+    font-size: 28px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scaleContainer {
+    gap: 8px;
+  }
+
+  .option {
+    width: 60px;
+    height: 60px;
+  }
+
+  .number {
+    font-size: 24px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}

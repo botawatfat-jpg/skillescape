@@ -1,0 +1,78 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--color-white);
+  position: relative;
+  text-align: center;
+  min-height: 120px;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.card.checked {
+  border-color: var(--color-black);
+  background: #f3f4f6;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 1.4;
+}
+
+.checkmark {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  color: transparent;
+}
+
+.card.checked .checkmark {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+@media (max-width: 1280px) {
+  .card {
+    padding: 28px 20px;
+    min-height: 100px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}

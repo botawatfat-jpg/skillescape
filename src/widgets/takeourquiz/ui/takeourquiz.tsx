@@ -3,8 +3,9 @@ import Image from "next/image";
 import React from "react";
 import styles from "./takeourquiz.module.css";
 import { textConfig } from "@/shared/config/text-config";
-import { QuizButton } from "@/features/quiz";
+import { QuizButton } from "@/shared/ui";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
 export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
   reverse = false,
@@ -17,7 +18,7 @@ export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
         <div className={styles.content}>
           <div className={styles.title}>{textConfig.takeOurQuiz.title}</div>
           <QuizButton className={styles.button}>
-            <span>{textConfig.takeOurQuiz.button}</span>
+            <Link href="/quiz">{textConfig.takeOurQuiz.button}</Link>
           </QuizButton>
         </div>
 

@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./takequiz.module.css";
 import { textConfig } from "@/shared/config/text-config";
-import { QuizButton } from "@/features/quiz";
+import { QuizButton } from "@/shared/ui";
+import Link from "next/link";
 
 export const TakeQuiz: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const TakeQuiz: React.FC = () => {
         <p className={styles.description}>{textConfig.takeQuiz.description}</p>
 
         <QuizButton size="card" variant="white" className={styles.button}>
-          {textConfig.takeQuiz.button}
+          <Link href="/quiz">{textConfig.takeQuiz.button}</Link>
         </QuizButton>
       </div>
     </section>
