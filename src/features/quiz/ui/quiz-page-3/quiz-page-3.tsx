@@ -36,7 +36,6 @@ export const QuizPage3 = () => {
           label="Financial freedom"
           variant="card"
           icon={<Wallet size={28} />}
-          defaultChecked
           onChange={() => handleChange("financial-freedom")}
         />
         <RadioOption

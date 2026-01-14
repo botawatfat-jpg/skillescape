@@ -36,7 +36,6 @@ export const QuizPage4 = () => {
           label="Business owner"
           variant="card"
           icon={<Handshake size={28} />}
-          defaultChecked
           onChange={() => handleChange("business-owner")}
         />
         <RadioOption

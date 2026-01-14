@@ -35,7 +35,6 @@ export const QuizPage5 = () => {
           label="Yes, but it didn't work out"
           variant="card"
           icon={<Loader size={28} />}
-          defaultChecked
           onChange={() => handleChange("tried-before")}
         />
         <RadioOption
