@@ -42,7 +42,7 @@ export const QuizPage28 = () => {
           application.
         </p>
 
-        <div className={styles.buttonContainer}>
+        <div className="buttonContainerQuiz">
           <Button onClick={handleContinue} className={styles.button}>
             Continue
           </Button>

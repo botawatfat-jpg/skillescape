@@ -1,7 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./header.module.css";
 import { Button, Logo } from "@/shared/ui";
-import Link from "next/link";
 import { MoveRightIcon } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
 import { textConfig } from "@/shared/config/text-config";
@@ -29,12 +29,12 @@ export const Header: React.FC = () => {
           ))}
         </nav>
         <div className={styles.actions}>
-          <Button variant="secondary">{textConfig.header.loginButton}</Button>
-          <Link href="/quiz">
-            <Button variant="primary">
-              <Link href="/quiz">{textConfig.header.startButton}</Link>
-            </Button>
-          </Link>
+          <Button variant="secondary" href="/auth/login">
+            {textConfig.header.loginButton}
+          </Button>
+          <Button variant="primary" href="/quiz">
+            {textConfig.header.startButton}
+          </Button>
         </div>
       </div>
     </header>

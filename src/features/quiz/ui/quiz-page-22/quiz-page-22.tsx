@@ -61,7 +61,7 @@ export const QuizPage22 = () => {
           application.
         </p>
 
-        <div className={styles.buttonContainer}>
+        <div className="buttonContainerQuiz">
           <Button onClick={handleContinue} className={styles.button}>
             Continue
           </Button>

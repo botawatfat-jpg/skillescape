@@ -39,16 +39,24 @@ export const QuizLayout: React.FC<QuizLayoutProps> = ({
                   <ChevronLeft size={20} />
                 </button>
               )}
-              <Logo />
+              <div className={styles.logo}>
+                <Logo />
+              </div>
             </div>
 
             <div className={styles.headerRight}>{title}</div>
           </div>
         </header>
 
-        {!withoutProgressBar && <ProgessBar progress={progress} barSeparation={barSeparation} />}
+        {!withoutProgressBar && (
+          <ProgessBar progress={progress} barSeparation={barSeparation} />
+        )}
 
-        <main className={cn(styles.main, barSeparation && styles.barSeparation)}>{children}</main>
+        <main
+          className={cn(styles.main, barSeparation && styles.barSeparation)}
+        >
+          {children}
+        </main>
       </div>
 
       {/* Debug Button */}
@@ -70,9 +78,7 @@ export const QuizLayout: React.FC<QuizLayoutProps> = ({
                 className={styles.resetButton}
                 onClick={() => {
                   if (
-                    confirm(
-                      "Are you sure you want to reset all quiz data?"
-                    )
+                    confirm("Are you sure you want to reset all quiz data?")
                   ) {
                     resetQuizData();
                   }

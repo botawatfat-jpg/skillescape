@@ -32,7 +32,7 @@ export const QuizPage34 = () => {
           />
         </div>
 
-        <div className={styles.buttonContainer}>
+        <div className="buttonContainerQuiz">
           <Button onClick={handleContinue} className={styles.button}>
             Continue
           </Button>

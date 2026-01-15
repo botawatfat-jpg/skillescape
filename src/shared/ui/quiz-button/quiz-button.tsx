@@ -10,6 +10,8 @@ interface QuizButtonProps {
   className?: string;
   size?: "medium" | "card";
   shrinkOnHover?: boolean;
+  href?: string;
+  onClick?: () => void;
 }
 
 /**
@@ -22,16 +24,34 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
   className,
   size,
   shrinkOnHover,
+  href,
+  onClick,
 }) => {
   const [isPending, startTransition] = useTransition();
 
   const handleClick = () => {
-    startTransition(() => {
-      // Здесь будет логика навигации к квизу
-      // Например: router.push('/quiz')
-      console.log("Opening quiz...");
-    });
+    if (onClick) {
+      startTransition(() => {
+        onClick();
+      });
+    }
   };
+
+  // Если есть href, просто используем Button как ссылку без transition логики
+  if (href) {
+    return (
+      <Button
+        variant={variant}
+        className={className}
+        size={size}
+        shrinkOnHover={shrinkOnHover}
+        href={href}
+      >
+        {children}
+        {variant !== "secondary" && <MoveRightIcon size={16} />}
+      </Button>
+    );
+  }
 
   return (
     <Button

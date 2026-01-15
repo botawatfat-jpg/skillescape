@@ -35,12 +35,16 @@
 
 @media (max-width: 1280px) {
   .header {
-    padding: 16px 24px;
+    padding: 16px 12px;
+  }
+
+  .root {
+    padding: 0 14px;
   }
 
   .content {
     h1 {
-      font-size: 28px;
+      font-size: 24px;
     }
 
     h3 {
@@ -48,7 +52,8 @@
     }
 
     h5 {
-      font-size: 14px;
+      font-size: 16px;
+      margin-bottom: 16px;
     }
   }
 }

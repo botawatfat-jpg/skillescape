@@ -21,3 +21,10 @@
 .white:hover {
   color: var(--color-accent-blue);
 }
+
+
+@media (max-width: 1280px) {
+  .logo {
+    font-size: 20px;
+  }
+}

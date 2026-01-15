@@ -6,19 +6,12 @@
   margin: 0 auto 40px;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
 .button {
   min-width: 400px;
 }
 
 @media (max-width: 1280px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-bottom: 32px;
   }
@@ -33,10 +26,6 @@
 }
 
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
   .button {
     min-width: 280px;
   }

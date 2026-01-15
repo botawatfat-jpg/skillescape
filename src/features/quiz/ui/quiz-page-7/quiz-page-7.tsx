@@ -79,7 +79,7 @@ export const QuizPage7 = () => {
         <CardOption name="challenges" value="boring-job" label="Boring job" />
       </div>
 
-      <div className={styles.buttonContainer}>
+      <div className="buttonContainerQuiz">
         <Button onClick={handleContinue} className={styles.button}>
           Continue
         </Button>

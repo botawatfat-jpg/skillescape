@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/shared/ui";
 
 /**
@@ -23,9 +22,9 @@ export default function NotFound() {
       <p style={{ marginBottom: "2rem", color: "#666" }}>
         The page you are looking for does not exist.
       </p>
-      <Link href="/">
-        <Button variant="primary">Go Home</Button>
-      </Link>
+      <Button variant="primary" href="/">
+        Go Home
+      </Button>
     </div>
   );
 }

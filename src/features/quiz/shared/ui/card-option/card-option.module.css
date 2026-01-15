@@ -42,42 +42,13 @@
   line-height: 1.4;
 }
 
-.checkmark {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #d1d5db;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-  color: transparent;
-}
-
-.card.checked .checkmark {
-  background: var(--color-black);
-  border-color: var(--color-black);
-  color: var(--color-white);
-}
-
 @media (max-width: 1280px) {
   .card {
-    padding: 28px 20px;
+    padding: 16px;
     min-height: 100px;
   }
 
   .label {
-    font-size: 16px;
-  }
-
-  .checkmark {
-    width: 20px;
-    height: 20px;
-    top: 10px;
-    right: 10px;
+    font-size: 14px;
   }
 }

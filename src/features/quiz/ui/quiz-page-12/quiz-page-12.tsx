@@ -35,7 +35,7 @@ export const QuizPage12 = () => {
         />
       </div>
 
-      <div className={styles.buttonContainer}>
+      <div className="buttonContainerQuiz">
         <Button onClick={handleContinue} className={styles.button}>
           Continue
         </Button>

@@ -47,9 +47,6 @@ export const CardOption: React.FC<CardOptionProps> = ({
         />
       )}
       <span className={styles.label}>{label}</span>
-      <div className={styles.checkmark}>
-        <Check size={20} />
-      </div>
     </label>
   );
 };

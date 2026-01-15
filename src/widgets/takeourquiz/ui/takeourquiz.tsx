@@ -5,7 +5,6 @@ import styles from "./takeourquiz.module.css";
 import { textConfig } from "@/shared/config/text-config";
 import { QuizButton } from "@/shared/ui";
 import { useMediaQuery } from "react-responsive";
-import Link from "next/link";
 
 export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
   reverse = false,
@@ -17,8 +16,8 @@ export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
       <div className={`${styles.container} ${reverse ? styles.reverse : ""}`}>
         <div className={styles.content}>
           <div className={styles.title}>{textConfig.takeOurQuiz.title}</div>
-          <QuizButton className={styles.button}>
-            <Link href="/quiz">{textConfig.takeOurQuiz.button}</Link>
+          <QuizButton className={styles.button} href="/quiz">
+            {textConfig.takeOurQuiz.button}
           </QuizButton>
         </div>
 

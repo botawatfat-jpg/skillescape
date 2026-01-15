@@ -38,13 +38,6 @@
   margin: 0;
 }
 
-.buttonContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
 .button {
   min-width: 400px;
 }

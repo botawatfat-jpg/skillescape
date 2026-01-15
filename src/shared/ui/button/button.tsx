@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./button.module.css";
 
 export interface ButtonProps
@@ -8,6 +9,8 @@ export interface ButtonProps
   href?: string;
   size?: "medium" | "card";
   shrinkOnHover?: boolean;
+  target?: string;
+  rel?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -17,6 +20,8 @@ export const Button: React.FC<ButtonProps> = ({
   className = "",
   href,
   shrinkOnHover = false,
+  target,
+  rel,
   ...props
 }) => {
   const classNames = [
@@ -30,10 +35,22 @@ export const Button: React.FC<ButtonProps> = ({
     .join(" ");
 
   if (href) {
+    // Для внешних ссылок используем обычный <a>
+    const isExternal = href.startsWith("http") || href.startsWith("//");
+
+    if (isExternal) {
+      return (
+        <a href={href} className={classNames} target={target} rel={rel}>
+          {children}
+        </a>
+      );
+    }
+
+    // Для внутренних ссылок используем Next.js Link
     return (
-      <a href={href} className={classNames}>
+      <Link href={href} className={classNames} target={target}>
         {children}
-      </a>
+      </Link>
     );
   }
 

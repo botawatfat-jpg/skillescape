@@ -27,12 +27,6 @@
   max-height: 400px;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
 .button {
   min-width: 400px;
 }

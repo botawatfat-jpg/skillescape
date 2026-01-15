@@ -3,7 +3,6 @@ import styles from "./hero.module.css";
 import Image from "next/image";
 import { textConfig } from "@/shared/config/text-config";
 import { QuizButton } from "@/shared/ui";
-import Link from "next/link";
 
 export const Hero: React.FC = () => {
   return (
@@ -18,8 +17,13 @@ export const Hero: React.FC = () => {
 
           <p className={styles.description}>{textConfig.hero.description}</p>
 
-          <QuizButton shrinkOnHover className={styles.button} variant="primary">
-            <Link href="/quiz">{textConfig.hero.button}</Link>
+          <QuizButton
+            shrinkOnHover
+            className={styles.button}
+            variant="primary"
+            href="/quiz"
+          >
+            {textConfig.hero.button}
           </QuizButton>
 
           <p className={styles.cta}>{textConfig.hero.cta}</p>

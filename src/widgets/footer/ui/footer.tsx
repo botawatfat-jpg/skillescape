@@ -37,7 +37,14 @@ export const Footer: React.FC = () => {
         </div>
         <div className={styles.policyContainer}>
           {textConfig.footer.policy.map((item, index) => (
-            <span key={index}>{item}</span>
+            <a
+              key={index}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.label}
+            </a>
           ))}
         </div>
       </div>

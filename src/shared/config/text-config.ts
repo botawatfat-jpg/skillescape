@@ -281,7 +281,11 @@ export const textConfig = {
       youtube: "https://www.youtube.com/Skillescape",
       instagram: "https://www.instagram.com/Skillescape",
     },
-    policy: ["Privacy Policy", "Subscription Policy", "Terms & Conditions"],
+    policy: [
+      { label: "Privacy Policy", href: "/terms/privacy" },
+      { label: "Subscription Policy", href: "/terms/subscription" },
+      { label: "Terms & Conditions", href: "/terms/terms-and-conditions" },
+    ],
   },
 
   quiz: {
@@ -309,9 +313,9 @@ export const textConfig = {
     menu: {
       title: "Docs",
       items: [
-        { label: "Privacy policy", href: "/privacy" },
-        { label: "Money-back policy", href: "/money-back" },
-        { label: "Subscription Privacy", href: "/subscription-privacy" },
+        { label: "Privacy policy", href: "/terms/privacy" },
+        { label: "Subscription Policy", href: "/terms/subscription" },
+        { label: "Terms & Conditions", href: "/terms/terms-and-conditions" },
         { label: "I already have an account", href: "/login" },
       ],
       footer: {
