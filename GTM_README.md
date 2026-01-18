@@ -292,8 +292,24 @@ export function MyComponent() {
 ## 📞 Контакты
 
 **GTM ID:** GTM-T3S2P2LK  
+**GA4 ID:** G-JY5TCQH26F (настроить в GTM)  
 **Статус:** ✅ ВСЕ РАБОТАЕТ  
 **Последнее обновление:** 18 января 2026
+
+---
+
+## 🎯 Важно: Настройка GA4
+
+**Google Analytics 4 нужно настроить В GTM Dashboard**, а не в коде!
+
+📚 **Полная инструкция:** [GA4_GTM_SETUP.md](./GA4_GTM_SETUP.md)
+
+Что нужно сделать:
+1. Открыть [GTM Dashboard](https://tagmanager.google.com)
+2. Создать GA4 Configuration Tag с ID `G-JY5TCQH26F`
+3. Создать Event Tags для всех событий
+4. Опубликовать
+5. Проверить в GA4 DebugView
 
 ---
 
@@ -301,6 +317,9 @@ export function MyComponent() {
 
 ```
 GTM_README.md (ты здесь)
+│
+├── 🎯 ВАЖНО: Настройка GA4
+│   └── GA4_GTM_SETUP.md ⭐ ЧИТАЙ ПЕРВЫМ!
 │
 ├── 🚀 Быстрый старт
 │   └── GTM_QUICK_START.md

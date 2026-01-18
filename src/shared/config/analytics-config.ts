@@ -10,10 +10,10 @@ export const analyticsConfig = {
     enabled: true,
   },
 
-  // Google Analytics 4 (если используется напрямую, не через GTM)
+  // Google Analytics 4 (настраивается в GTM Dashboard, не в коде)
   ga4: {
-    measurementId: "", // Если нужен прямой GA4, добавьте ID
-    enabled: false,
+    measurementId: "G-JY5TCQH26F", // Настроить в GTM как GA4 Configuration Tag
+    enabled: false, // false т.к. управляется через GTM, не напрямую в коде
   },
 
   // Meta (Facebook) Pixel

@@ -72,17 +72,17 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               // GTM и GA скрипты (с wildcard для всех поддоменов)
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com https://www.google.com",
               // Отдельно для <script> тегов (для лучшей совместимости)
-              "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com",
-              // API запросы (события GTM/GA)
-              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com",
-              // Пиксели и изображения
-              "img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com",
+              "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com https://www.google.com",
+              // API запросы (события GTM/GA + DoubleClick)
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://*.googletagmanager.com https://www.google.com",
+              // Пиксели и изображения (включая DoubleClick tracking pixels)
+              "img-src 'self' data: https: https://www.google-analytics.com https://stats.g.doubleclick.net https://www.googletagmanager.com",
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",
-              // GTM noscript iframe
-              "frame-src https://www.googletagmanager.com",
+              // GTM noscript iframe + Tag Assistant
+              "frame-src https://www.googletagmanager.com https://tagassistant.google.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

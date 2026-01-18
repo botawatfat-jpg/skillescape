@@ -20,19 +20,8 @@ export function middleware(request: NextRequest) {
     "camera=(), microphone=(), geolocation=()"
   );
 
-  // CSP Headers для дополнительной безопасности
-  response.headers.set(
-    "Content-Security-Policy",
-    [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
-      "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https:",
-      "font-src 'self' data:",
-      "connect-src 'self'",
-      "frame-ancestors 'self'",
-    ].join("; ")
-  );
+  // CSP настроен в next.config.ts (не дублируем здесь)
+  // Middleware headers перекрывают next.config.ts headers!
 
   return response;
 }
