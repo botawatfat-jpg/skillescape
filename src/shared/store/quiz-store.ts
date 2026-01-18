@@ -2,6 +2,8 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface QuizData {
+  // Quiz session ID (generated once per quiz session)
+  quizId?: string;
   // Gender selection
   gender?: "male" | "female";
   // Page 1
@@ -86,17 +88,36 @@ interface QuizStore {
   quizData: QuizData;
   updateQuizData: (data: Partial<QuizData>) => void;
   resetQuizData: () => void;
+  generateQuizId: () => string;
 }
+
+// Генерация уникального ID для квиза
+const generateUniqueQuizId = (): string => {
+  const timestamp = Date.now();
+  const random = Math.random().toString(36).substring(2, 9);
+  return `quiz_${timestamp}_${random}`;
+};
 
 export const useQuizStore = create<QuizStore>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       quizData: {},
       updateQuizData: (data) =>
         set((state) => ({
           quizData: { ...state.quizData, ...data },
         })),
       resetQuizData: () => set({ quizData: {} }),
+      generateQuizId: () => {
+        const existingId = get().quizData.quizId;
+        if (existingId) {
+          return existingId;
+        }
+        const newId = generateUniqueQuizId();
+        set((state) => ({
+          quizData: { ...state.quizData, quizId: newId },
+        }));
+        return newId;
+      },
     }),
     {
       name: "quiz-storage",

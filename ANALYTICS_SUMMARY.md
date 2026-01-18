@@ -13,6 +13,27 @@ Google Tag Manager полностью интегрирован в проект �
 
 ---
 
+## 🆔 Уникальный Quiz ID
+
+Каждое прохождение квиза получает **уникальный ID**, который позволяет:
+- Отслеживать полный путь пользователя от начала до конца
+- Связывать все события одной сессии (start → progress → lead → result)
+- Делать A/B тесты и сравнивать разные версии квиза
+- Анализировать конверсию по конкретным сессиям
+
+**Формат ID:** `quiz_1737293847123_a7k9m2x`
+- `quiz_` - префикс
+- `1737293847123` - timestamp (миллисекунды)
+- `a7k9m2x` - случайная строка (7 символов)
+
+**Жизненный цикл:**
+1. Генерируется при первом заходе на квиз (pageId=1)
+2. Сохраняется в Zustand store с persist (localStorage)
+3. Используется во всех событиях аналитики
+4. Остается неизменным до сброса store или очистки localStorage
+
+---
+
 ## ✅ Реализованные события
 
 ### Основные события квиза
@@ -23,9 +44,10 @@ Google Tag Manager полностью интегрирован в проект �
    - Защита: нет (каждый клик отслеживается)
 
 2. **`quiz_start`** - фактический старт прохождения квиза
-   - Параметры: `quiz_id: "ai_quiz_v1"`
+   - Параметры: `quiz_id` (уникальный ID, генерируется автоматически)
    - Где: **ТОЛЬКО** pageId=1
    - Защита: sessionStorage + useRef (1 раз за сессию)
+   - Формат ID: `quiz_1737293847123_a7k9m2x`
 
 3. **`quiz_progress`** - прогресс прохождения
    - Параметры: `quiz_id`, `progress_percent: 0-100`
@@ -38,7 +60,7 @@ Google Tag Manager полностью интегрирован в проект �
    - Включает: user_goal, user_status, coding_level, income_goal, readiness и др.
 
 5. **`lead_submit`** - захват email
-   - Параметры: `lead_type: "quiz_email"`, `quiz_id: "ai_quiz_v1"`
+   - Параметры: `lead_type: "quiz_email"`, `quiz_id` (уникальный ID сессии)
    - Где: pageId=55 (email форма)
    - Защита: sessionStorage + useRef (1 раз за сессию)
 
@@ -232,14 +254,35 @@ ai_tools.length > 4
 
 ## 💻 Использование в коде
 
+### Генерация уникального Quiz ID
+
+Quiz ID генерируется автоматически при первом запуске квиза и сохраняется в Zustand store:
+
+```tsx
+import { useQuizStore } from "@/shared/store";
+
+const { generateQuizId } = useQuizStore();
+
+// Генерирует новый ID или возвращает существующий
+const quizId = generateQuizId();
+// Формат: "quiz_1737293847123_a7k9m2x"
+```
+
+**Где хранится:**
+- В Zustand store с persist middleware
+- Автоматически сохраняется в localStorage
+- Доступен на всех страницах квиза
+
 ### React Hook useAnalytics()
 
 ```tsx
 "use client";
 
 import { useAnalytics } from "@/shared/lib/analytics";
+import { useQuizStore } from "@/shared/store";
 
 export function QuizPage() {
+  const { generateQuizId } = useQuizStore();
   const {
     trackQuizStart,
     trackQuizProgress,
@@ -247,19 +290,22 @@ export function QuizPage() {
     trackLeadSubmit,
   } = useAnalytics();
   
+  // Получаем или генерируем quiz ID
+  const quizId = generateQuizId();
+  
   // Начало квиза (автоматическая дедупликация)
   useEffect(() => {
-    trackQuizStart("ai_quiz_v1");
+    trackQuizStart(quizId);
   }, []);
   
   // Прогресс
   const handleNext = (progress: number) => {
-    trackQuizProgress(progress, "ai_quiz_v1");
+    trackQuizProgress(progress, quizId);
   };
   
   // Email capture
   const handleEmailSubmit = () => {
-    trackLeadSubmit("quiz_email", "ai_quiz_v1");
+    trackLeadSubmit("quiz_email", quizId);
   };
   
   return <div>Quiz content</div>;
@@ -475,6 +521,9 @@ console.log(window.dataLayer)
 │   │   ├── config/
 │   │   │   └── analytics-config.ts   # GTM конфигурация
 │   │   │
+│   │   ├── store/
+│   │   │   └── quiz-store.ts         # Quiz data + generateQuizId()
+│   │   │
 │   │   ├── lib/
 │   │   │   └── analytics/
 │   │   │       ├── push-datalayer.ts # Helper для dataLayer
@@ -488,7 +537,7 @@ console.log(window.dataLayer)
 │   ├── pages/
 │   │   ├── quiz-questions/
 │   │   │   └── ui/
-│   │   │       └── quiz-questions-page.tsx # Отслеживание квиза
+│   │   │       └── quiz-questions-page.tsx # Генерация ID + отслеживание
 │   │   │
 │   │   └── selling-page/
 │   │       └── ui/
@@ -498,7 +547,7 @@ console.log(window.dataLayer)
 │       └── quiz/
 │           └── ui/
 │               └── quiz-page-55/
-│                   └── quiz-page-55.tsx # Отслеживание email
+│                   └── quiz-page-55.tsx # Отслеживание email с quiz ID
 │
 └── next.config.ts                    # CSP конфигурация
 ```
@@ -516,6 +565,8 @@ console.log(window.dataLayer)
 - ✅ QuizButton с CTA tracking
 - ✅ Дедупликация работает
 - ✅ CSP настроен
+- ✅ **Уникальный Quiz ID генерируется автоматически**
+- ✅ **Quiz ID сохраняется в store и используется во всех событиях**
 
 ### GTM Dashboard (нужно настроить)
 - [ ] Создать все Data Layer Variables

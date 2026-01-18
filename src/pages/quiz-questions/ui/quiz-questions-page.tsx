@@ -76,7 +76,7 @@ export const QuizQuestionsPage: React.FC = () => {
   const lastTrackedProgress = useRef<number>(-1);
 
   // Quiz data для отправки в GTM
-  const { quizData } = useQuizStore();
+  const { quizData, generateQuizId } = useQuizStore();
 
   const handleBack = () => {
     router.back();
@@ -529,7 +529,8 @@ export const QuizQuestionsPage: React.FC = () => {
 
     if (!content) return;
 
-    const quizId = "ai_quiz_v1";
+    // Генерируем или получаем существующий quiz ID
+    const quizId = generateQuizId();
     const progress = content.progress || 0;
     const title = content.title || "";
     const isMotivationScreen = title === ""; // Мотивационный экран если title пустой
@@ -557,7 +558,7 @@ export const QuizQuestionsPage: React.FC = () => {
       });
 
     }
-  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData, renderContent]);
+  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData, renderContent, generateQuizId]);
 
 
   const pageData = renderContent();

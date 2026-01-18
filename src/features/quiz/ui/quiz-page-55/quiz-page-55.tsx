@@ -16,7 +16,7 @@ const validateEmail = (email: string): boolean => {
 
 export const QuizPage55 = () => {
     const router = useRouter();
-    const { updateQuizData } = useQuizStore();
+    const { quizData, updateQuizData } = useQuizStore();
     const { trackLeadSubmit, trackFormSubmit } = useAnalytics();
     const [email, setEmail] = useState("");
     const [agreeToReceive, setAgreeToReceive] = useState(false);
@@ -53,7 +53,8 @@ export const QuizPage55 = () => {
         // GTM: Отслеживаем отправку лида (email capture)
         // Событие сработает только один раз за сессию
         // ВАЖНО: передаём quiz_id для атрибуции и A/B тестов
-        trackLeadSubmit("quiz_email", "ai_quiz_v1");
+        const quizId = quizData.quizId || "unknown";
+        trackLeadSubmit("quiz_email", quizId);
         trackFormSubmit("quiz_email_form");
         
         router.push("/quiz/questions?pageId=56");

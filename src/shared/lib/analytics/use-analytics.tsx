@@ -30,12 +30,12 @@ export function useAnalytics() {
    * Отслеживание начала квиза
    * Гарантирует отправку события только один раз за сессию для конкретного quiz_id
    * 
-   * @param quizId - ID квиза (например "ai_quiz_v1")
+   * @param quizId - Уникальный ID квиза (генерируется автоматически)
    */
-  const trackQuizStart = useCallback((quizId: string = "ai_quiz_v1") => {
+  const trackQuizStart = useCallback((quizId: string) => {
     // Проверяем sessionStorage для межстраничной защиты
     const sessionKey = `quiz_start_${quizId}`;
-    
+
     if (typeof window !== "undefined") {
       const alreadyFired = sessionStorage.getItem(sessionKey);
       if (alreadyFired) {
@@ -56,7 +56,7 @@ export function useAnalytics() {
 
     // Отмечаем как отправленное
     quizStartFiredRef.current.add(quizId);
-    
+
     if (typeof window !== "undefined") {
       sessionStorage.setItem(sessionKey, "true");
     }
@@ -66,11 +66,11 @@ export function useAnalytics() {
    * Отслеживание прогресса квиза
    * 
    * @param progressPercent - Процент прохождения (0-100)
-   * @param quizId - ID квиза
+   * @param quizId - Уникальный ID квиза
    */
   const trackQuizProgress = useCallback((
     progressPercent: number,
-    quizId: string = "ai_quiz_v1"
+    quizId: string
   ) => {
     pushDL("quiz_progress", {
       quiz_id: quizId,
@@ -82,11 +82,11 @@ export function useAnalytics() {
    * Отслеживание просмотра результата квиза
    * 
    * @param resultType - Тип результата (например "ai_beginner", "ai_expert")
-   * @param quizId - ID квиза
+   * @param quizId - Уникальный ID квиза
    */
   const trackQuizResultView = useCallback((
     resultType: string,
-    quizId: string = "ai_quiz_v1"
+    quizId: string
   ) => {
     pushDL("quiz_result_view", {
       quiz_id: quizId,
@@ -104,7 +104,7 @@ export function useAnalytics() {
   const trackLeadSubmit = useCallback((leadType: string, quizId?: string) => {
     // Проверяем sessionStorage для межстраничной защиты
     const sessionKey = `lead_submit_${leadType}`;
-    
+
     if (typeof window !== "undefined") {
       const alreadyFired = sessionStorage.getItem(sessionKey);
       if (alreadyFired) {
@@ -126,7 +126,7 @@ export function useAnalytics() {
 
     // Отмечаем как отправленное
     leadSubmitFiredRef.current.add(leadType);
-    
+
     if (typeof window !== "undefined") {
       sessionStorage.setItem(sessionKey, "true");
     }
@@ -138,7 +138,7 @@ export function useAnalytics() {
    */
   const trackQuizComplete = useCallback((score?: number, quizId?: string) => {
     pushDL("quiz_complete", {
-      quiz_id: quizId || "ai_quiz_v1",
+      quiz_id: quizId || "unknown",
       score: score,
       page: typeof window !== "undefined" ? window.location.pathname : undefined,
     });
@@ -157,7 +157,7 @@ export function useAnalytics() {
     pushDL("sign_up", {
       method: method, // email, google, facebook, etc.
     });
-    
+
     // Также отправляем как конверсию
     pushDL("conversion", {
       conversion_name: "sign_up",
@@ -197,14 +197,14 @@ export function useAnalytics() {
         value: value,
         currency: "USD",
       });
-      
+
       // Дополнительное событие для подписки
       pushDL("subscription_purchase", {
         plan_name: planName,
         transaction_id: transactionId,
         value: value,
       });
-      
+
       // Конверсия
       pushDL("conversion", {
         conversion_name: "subscription_purchase",
@@ -257,13 +257,13 @@ export function useAnalytics() {
   return {
     // Базовое событие
     trackEvent,
-    
+
     // GTM события (новые, приоритетные)
     trackQuizStart,
     trackQuizProgress,
     trackQuizResultView,
     trackLeadSubmit,
-    
+
     // Другие специфичные события
     trackButtonClick,
     trackQuizComplete,
