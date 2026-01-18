@@ -553,31 +553,11 @@ export const QuizQuestionsPage: React.FC = () => {
       // Отправляем все данные квиза в GTM как JSON
       trackEvent("quiz_result_view", {
         quiz_id: quizId,
-        // Основные данные
-        user_goal: quizData.goal || null,
-        user_status: quizData.status || null,
-        user_experience: quizData.experience || null,
-        // Навыки
-        coding_level: quizData.coding || null,
-        freelancing_level: quizData.freelancing || null,
-        ai_tools: quizData.aiTools || [],
-        // Финансы
-        income_goal: quizData.incomeGoal || null,
-        goal_amount: quizData.goalAmount || null,
-        // Мотивация
-        readiness: quizData.readiness || null,
-        guided_plan: quizData.guidedPlan || null,
-        // Контакты (не передаем PII - только факт наличия)
-        has_email: !!quizData.email,
-        has_name: !!quizData.name,
-        // Дополнительно
-        work_style: quizData.workStyle || null,
-        ideal_hours: quizData.idealHours || null,
-        time_commitment: quizData.timeCommitment || null,
+        result_type: quizData
       });
 
     }
-  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData]);
+  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData, renderContent]);
 
 
   const pageData = renderContent();
