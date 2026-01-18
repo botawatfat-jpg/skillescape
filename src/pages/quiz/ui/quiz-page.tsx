@@ -3,10 +3,21 @@ import styles from "./quiz-page.module.css";
 import { QuizHeader } from "@/widgets/quiz-header";
 import { GenderSelection } from "@/widgets/gender-selection";
 import { textConfig } from "@/shared/config/text-config";
+import { generatePageMetadata } from "@/shared/config/seo-config";
 
-export const metadata: Metadata = {
-  title: "Quiz",
-};
+export const metadata: Metadata = generatePageMetadata({
+  title: "AI Freelancing Quiz - Find Your Perfect Path",
+  description:
+    "Take our personalized quiz to discover which AI freelancing skills match your interests and start your journey to financial freedom.",
+  path: "/quiz",
+  keywords: [
+    "AI quiz",
+    "freelancing quiz",
+    "career assessment",
+    "AI skills test",
+    "freelancer assessment",
+  ],
+});
 
 export const QuizPage: React.FC = () => {
   return (

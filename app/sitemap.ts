@@ -5,44 +5,75 @@ import { MetadataRoute } from "next";
  * Next.js 15/16 - автоматическая генерация sitemap.xml
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://Skillescape.me";
+  const baseUrl = "https://skillescape.me";
+  const currentDate = new Date();
 
   return [
+    // Главная страница
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "daily",
-      priority: 1,
+      priority: 1.0,
     },
-    {
-      url: `${baseUrl}/courses`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+    // Квиз и вопросы
     {
       url: `${baseUrl}/quiz`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/testimonials`,
-      lastModified: new Date(),
+      url: `${baseUrl}/quiz/questions`,
+      lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.85,
     },
+    // Продающая страница
     {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      url: `${baseUrl}/selling-page`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    // Подписка
+    {
+      url: `${baseUrl}/subscription`,
+      lastModified: currentDate,
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Аутентификация
+    {
+      url: `${baseUrl}/auth/login`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: `${baseUrl}/auth/reset-password`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
       priority: 0.5,
+    },
+    // Юридические страницы
+    {
+      url: `${baseUrl}/terms/terms-and-conditions`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/terms/privacy`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/terms/subscription`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.4,
     },
   ];
 }

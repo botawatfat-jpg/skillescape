@@ -15,7 +15,7 @@ export const QuizPage57 = () => {
     const name = quizData?.name || "there";
 
     const handleSeePlan = () => {
-        router.push("/subscription");
+        router.push("/selling-page");
     };
 
     return (
