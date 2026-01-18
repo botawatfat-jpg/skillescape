@@ -16,17 +16,19 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className={styles.description}>{textConfig.hero.description}</p>
+          <div className={styles.flexContainer}>
 
-          <QuizButton
-            shrinkOnHover
-            className={styles.button}
-            variant="primary"
-            href="/quiz"
-          >
-            {textConfig.hero.button}
-          </QuizButton>
+            <QuizButton
+              shrinkOnHover
+              className={styles.button}
+              variant="primary"
+              href="/quiz"
+            >
+              {textConfig.hero.button}
+            </QuizButton>
 
-          <p className={styles.cta}>{textConfig.hero.cta}</p>
+            <p className={styles.cta}>{textConfig.hero.cta}</p>
+          </div>
         </div>
 
         <div className={styles.imageWrapper}>

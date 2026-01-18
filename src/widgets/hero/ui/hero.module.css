@@ -50,6 +50,11 @@
   width: fit-content;
 }
 
+.flexContainer {
+  display: flex;
+  gap: 8px;
+}
+
 .cta {
   font-weight: 400;
   font-size: 14px;
@@ -157,5 +162,10 @@
   .image img {
     width: 100%;
     height: auto;
+  }
+
+  .flexContainer {
+    flex-direction: column;
+    gap: 0px
   }
 }
