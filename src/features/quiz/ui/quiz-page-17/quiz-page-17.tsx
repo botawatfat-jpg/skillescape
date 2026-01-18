@@ -17,7 +17,7 @@ export const QuizPage17 = () => {
 
   return (
     <div className={styles.container}>
-      <QuizTitle>How true is this for you?</QuizTitle>
+      <QuizTitle>I&apos;ve been looking for ways to earn extra income</QuizTitle>
 
       <QuizQuote>
         &quot;I&apos;ve been thinking a lot about ways to earn extra income

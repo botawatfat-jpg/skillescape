@@ -21,8 +21,7 @@ export const QuizPage9 = () => {
       <QuizTitle>How true is this for you?</QuizTitle>
 
       <QuizQuote>
-        &quot;Lately I&apos;ve been thinking that working harder isn&apos;t the
-        answer - I need a smarter way to grow&quot;
+        &quot;I&apos;m starting to realize I need a smarter way to grow, not just more hard work&quot;
       </QuizQuote>
 
       <RatingScale

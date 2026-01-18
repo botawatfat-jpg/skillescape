@@ -1,0 +1,122 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+}
+
+.lottieContainer {
+    background: transparent;
+    margin: 0px auto;
+    outline: none;
+    overflow: hidden;
+    max-width: 576px;
+    max-height: 576px;
+    width: 100%;
+    min-height: 400px;
+}
+
+.planFocus {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    padding: 0 16px;
+}
+
+.focusTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.focusList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.focusItem {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.focusIcon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.focusContent {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.focusLabel {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.focusText {
+    color: #4b5563;
+}
+
+.seePlanButton {
+    min-width: 320px;
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        gap: 24px;
+    }
+
+    .lottieContainer {
+        min-height: 300px;
+        max-width: 100%;
+    }
+
+    .planFocus {
+        padding: 0 8px;
+        gap: 12px;
+    }
+
+    .focusTitle {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .focusList {
+        gap: 16px;
+    }
+
+    .focusItem {
+        gap: 10px;
+    }
+
+    .focusIcon {
+        font-size: 18px;
+    }
+
+    .focusContent {
+        font-size: 14px;
+    }
+
+    .seePlanButton {
+        min-width: 280px;
+    }
+}

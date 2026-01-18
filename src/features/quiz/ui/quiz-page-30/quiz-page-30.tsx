@@ -13,17 +13,39 @@ export const QuizPage30 = () => {
 
   const handleChange = (value: string) => {
     const currentTools = quizData.aiTools || [];
-    if (currentTools.includes(value)) {
+
+    // Если выбрали "none"
+    if (value === "none") {
+      // Если "none" уже выбран, снимаем его
+      if (currentTools.includes("none")) {
+        updateQuizData({ aiTools: [] });
+      } else {
+        // Иначе убираем все и ставим только "none"
+        updateQuizData({ aiTools: ["none"] });
+      }
+      return;
+    }
+
+    // Если выбрали любой другой инструмент
+    // Сначала убираем "none" если он был выбран
+    const toolsWithoutNone = currentTools.filter((tool) => tool !== "none");
+
+    // Затем toggle выбранного инструмента
+    if (toolsWithoutNone.includes(value)) {
       updateQuizData({
-        aiTools: currentTools.filter((tool) => tool !== value),
+        aiTools: toolsWithoutNone.filter((tool) => tool !== value),
       });
     } else {
-      updateQuizData({ aiTools: [...currentTools, value] });
+      updateQuizData({ aiTools: [...toolsWithoutNone, value] });
     }
   };
 
   const handleContinue = () => {
-    router.push("/quiz/questions?pageId=31");
+    if (quizData.aiTools?.includes("none")) {
+      router.push("/quiz/questions?pageId=39");
+    } else {
+      router.push("/quiz/questions?pageId=31");
+    }
   };
 
   return (
@@ -41,6 +63,7 @@ export const QuizPage30 = () => {
           value="chatgpt"
           label="ChatGPT"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/Vector.png"
+          checked={(quizData.aiTools || []).includes("chatgpt")}
           onChange={() => handleChange("chatgpt")}
         />
         <CardOption
@@ -48,6 +71,7 @@ export const QuizPage30 = () => {
           value="deepseek"
           label="DeepSeek"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons.png"
+          checked={(quizData.aiTools || []).includes("deepseek")}
           onChange={() => handleChange("deepseek")}
         />
         <CardOption
@@ -55,6 +79,7 @@ export const QuizPage30 = () => {
           value="gemini"
           label="Gemini"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons-1.png"
+          checked={(quizData.aiTools || []).includes("gemini")}
           onChange={() => handleChange("gemini")}
         />
         <CardOption
@@ -62,6 +87,7 @@ export const QuizPage30 = () => {
           value="midjourney"
           label="Midjourney"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons-2.png"
+          checked={(quizData.aiTools || []).includes("midjourney")}
           onChange={() => handleChange("midjourney")}
         />
         <CardOption
@@ -69,6 +95,7 @@ export const QuizPage30 = () => {
           value="veo3"
           label="VEO 3"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/Frame 2.png"
+          checked={(quizData.aiTools || []).includes("veo3")}
           onChange={() => handleChange("veo3")}
         />
         <CardOption
@@ -76,6 +103,7 @@ export const QuizPage30 = () => {
           value="perplexity"
           label="Perplexity AI"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons-3.png"
+          checked={(quizData.aiTools || []).includes("perplexity")}
           onChange={() => handleChange("perplexity")}
         />
         <CardOption
@@ -83,6 +111,7 @@ export const QuizPage30 = () => {
           value="elevenlabs"
           label="Eleven Labs"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons-4.png"
+          checked={(quizData.aiTools || []).includes("elevenlabs")}
           onChange={() => handleChange("elevenlabs")}
         />
         <CardOption
@@ -90,12 +119,14 @@ export const QuizPage30 = () => {
           value="kling"
           label="Kling AI"
           icon="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/33/media/AI Icons-5.png"
+          checked={(quizData.aiTools || []).includes("kling")}
           onChange={() => handleChange("kling")}
         />
         <CardOption
           name="aiTools"
           value="none"
           label="No experience yet, but I'm excited to learn"
+          checked={(quizData.aiTools || []).includes("none")}
           onChange={() => handleChange("none")}
         />
       </div>

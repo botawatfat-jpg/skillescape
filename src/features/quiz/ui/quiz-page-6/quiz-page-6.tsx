@@ -45,13 +45,10 @@ export const QuizPage6 = () => {
       case "experienced":
         return (
           <>
-            <QuizTitle>Thousands already use AI to build real income</QuizTitle>
+            <QuizTitle>Thousands are earning with AI - you can too</QuizTitle>
 
             <QuizDescription>
-              Now it&apos;s your turn to scale it! Whether your goal is
-              financial <br /> freedom or starting an AI-automation business,
-              Skillescape gives <br /> you the proven system to grow faster -
-              without wasting time.
+            Skillescape gives you the exact tools, lessons, and roadmap to start and scale your AI-powered income, even if you&apos;re starting from zero
             </QuizDescription>
           </>
         );

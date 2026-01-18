@@ -18,7 +18,7 @@ export const QuizPage16 = () => {
 
   return (
     <div className={styles.container}>
-      <QuizTitle>How true is this for you?</QuizTitle>
+      <QuizTitle>I keep feeling financially behind, and it&apos;s becoming overwhelming</QuizTitle>
 
       <QuizQuote>
         &quot;I constantly feel like I don&apos;t have enough money — and it stresses me

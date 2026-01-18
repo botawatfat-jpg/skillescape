@@ -39,6 +39,27 @@ import {
   QuizPage34,
   QuizPage35,
   QuizPage36,
+  QuizPage37,
+  QuizPage38,
+  QuizPage39,
+  QuizPage40,
+  QuizPage41,
+  QuizPage42,
+  QuizPage43,
+  QuizPage44,
+  QuizPage45,
+  QuizPage46,
+  QuizPage47,
+  QuizPage48,
+  QuizPage49,
+  QuizPage50,
+  QuizPage51,
+  QuizPage52,
+  QuizPage53,
+  QuizPage54,
+  QuizPage55,
+  QuizPage56,
+  QuizPage57,
 } from "@/features/quiz/ui";
 import { useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -274,6 +295,8 @@ export const QuizQuestionsPage: React.FC = () => {
           title: "AI Skills",
           withLayout: true,
         };
+
+      // развилка 1 - 31, 2 - 39 (37 это пересечение)
       case 30:
         return {
           content: <QuizPage30 />,
@@ -324,6 +347,165 @@ export const QuizQuestionsPage: React.FC = () => {
           content: <QuizPage36 />,
           progress: 0,
           title: "",
+          withLayout: true,
+        };
+      case 37:
+        return {
+          content: <QuizPage37 />,
+          progress: 82,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 38:
+        return {
+          content: <QuizPage38 />,
+          progress: 85,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 39:
+        return {
+          content: <QuizPage39 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 40:
+        return {
+          content: <QuizPage40 />,
+          progress: 88,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 41:
+        return {
+          content: <QuizPage41 />,
+          progress: 0,
+          title: "Skillescape",
+          withLayout: true,
+        };
+      case 42:
+        return {
+          content: <QuizPage42 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 43:
+        return {
+          content: <QuizPage43 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 44:
+        return {
+          content: <QuizPage44 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 45:
+        return {
+          content: <QuizPage45 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 46:
+        return {
+          content: <QuizPage46 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 47:
+        return {
+          content: <QuizPage47 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 48:
+        return {
+          content: <QuizPage48 />,
+          progress: 91,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 49:
+        return {
+          content: <QuizPage49 />,
+          progress: 0,
+          title: "",
+          withLayout: true,
+        };
+      case 50:
+        return {
+          content: <QuizPage50 />,
+          progress: 94,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 51:
+        return {
+          content: <QuizPage51 />,
+          progress: 97,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 52:
+        return {
+          content: <QuizPage52 />,
+          progress: 99,
+          barSeparation: true,
+          title: "AI Skills",
+          withLayout: true,
+        };
+      case 53:
+        return {
+          content: <QuizPage53 />,
+          progress: 100,
+          barSeparation: true,
+          title: "",
+          withLayout: true,
+        };
+      case 54:
+        return {
+          content: <QuizPage54 />,
+          progress: 100,
+          barSeparation: true,
+          title: "",
+          withLayout: true,
+        };
+      case 55:
+        return {
+          content: <QuizPage55 />,
+          progress: 100,
+          barSeparation: true,
+          title: "Email",
+          withLayout: true,
+        };
+      case 56:
+        return {
+          content: <QuizPage56 />,
+          progress: 100,
+          barSeparation: true,
+          title: "Name",
+          withLayout: true,
+        };
+      case 57:
+        return {
+          content: <QuizPage57 />,
+          progress: 100,
+          barSeparation: true,
+          title: "Your Plan",
           withLayout: true,
         };
       default:

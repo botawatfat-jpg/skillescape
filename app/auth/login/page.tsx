@@ -39,7 +39,7 @@ export default function LoginPage() {
       <div className={styles.card}>
         <div className={styles.header}>
           <h1 className={styles.title}>Welcome back</h1>
-          <p className={styles.subtitle}>Login to your Jobescape account</p>
+          <p className={styles.subtitle}>Login to your Skillescape account</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>

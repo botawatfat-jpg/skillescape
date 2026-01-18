@@ -13,17 +13,20 @@ export const QuizPage36 = () => {
   const { quizData } = useQuizStore();
 
   const handleContinue = () => {
-    router.push("/quiz/questions?pageId=37");
+    if (quizData.aiTools?.includes("none")) {
+      router.push("/quiz/questions?pageId=47");
+    } else {
+      router.push("/quiz/questions?pageId=37");
+    }
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <QuizTitle>Ready to start your AI journey?</QuizTitle>
+        <QuizTitle>Start your AI journey today</QuizTitle>
 
         <QuizDescription>
-          Join thousands of students who are already building their AI skills
-          and earning online with our proven system.
+          Join thousands already learning AI and earning online with our proven system.
         </QuizDescription>
 
         <div className={styles.imageContainer}>

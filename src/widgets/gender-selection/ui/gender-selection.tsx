@@ -32,17 +32,16 @@ export const GenderSelection: React.FC = () => {
       {/* Gender Cards */}
       <div className={styles.cards}>
         <button
-          className={`${styles.card} ${
-            selectedGender === "male" ? styles.selected : ""
-          }`}
+          className={`${styles.card} ${selectedGender === "male" ? styles.selected : ""
+            }`}
           onClick={() => handleSelect("male")}
         >
           <div className={styles.imageWrapper}>
             <Image
-              src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_draft/v6.0.6/218/media/Gender Cards 2.0 2.webp"
+              src="/assets/quiz/male.jpg"
               alt="Male"
-              width={288}
-              height={368}
+              width={1000}
+              height={1000}
               className={styles.image}
             />
           </div>
@@ -52,17 +51,16 @@ export const GenderSelection: React.FC = () => {
         </button>
 
         <button
-          className={`${styles.card} ${
-            selectedGender === "female" ? styles.selected : ""
-          }`}
+          className={`${styles.card} ${selectedGender === "female" ? styles.selected : ""
+            }`}
           onClick={() => handleSelect("female")}
         >
           <div className={styles.imageWrapper}>
             <Image
-              src="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.3/1/media/Gender Cards 2.0-1 (1).png"
+              src="/assets/quiz/female.jpg"
               alt="Female"
-              width={288}
-              height={368}
+              width={1000}
+              height={1000}
               className={styles.image}
             />
           </div>

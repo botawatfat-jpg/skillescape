@@ -57,6 +57,29 @@ interface QuizData {
   confidenceFactor?: string;
   // Page 33
   guidedPlan?: number;
+  // Page 37
+  knowsClientMethods?: string;
+  // Page 38
+  earningTimeline?: string;
+  // Page 40
+  knowsAiAutomation?: string;
+  // Page 48
+  priceThreshold?: string;
+  // Page 50
+  moneyReason?: string;
+  // Page 51
+  goalAmount?: string;
+  // Page 52
+  timeCommitment?: string;
+  // Page 54
+  readyToTakeControl?: "yes" | "no";
+  commit30Min?: "yes" | "no";
+  wantsHelpBuildingProject?: "yes" | "no";
+  // Page 55
+  email?: string;
+  agreeToReceive?: boolean;
+  // Page 56
+  name?: string;
 }
 
 interface QuizStore {

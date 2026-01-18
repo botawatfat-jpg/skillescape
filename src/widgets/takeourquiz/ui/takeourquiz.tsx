@@ -30,7 +30,7 @@ export const TakeOurQuiz: React.FC<{ reverse?: boolean }> = ({
             }
             alt="Take our quiz"
             width={1233}
-            height={isWidthSmall ? 600 : 488}
+            height={isWidthSmall ? 350 : 488}
             loading="lazy"
             style={{ borderRadius: "16px" }}
           />

@@ -20,19 +20,17 @@ export const QuizPage31 = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <QuizTitle>
-          Jobescape - your personal AI toolbox - simple, powerful,
-          beginner-ready
+          Skillescape - your all-in-one AI workspace
         </QuizTitle>
 
         <QuizDescription>
-          You won&apos;t need to figure out what to use. You&apos;ll get
-          everything already set up in one place.
+          Everything you need is already set up for you. No tech headaches - just open, use, and start creating
         </QuizDescription>
 
         <div className={styles.imageContainer}>
           <Image
             src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/34/media/teaser-19-2.webp"
-            alt="Jobescape AI toolbox"
+            alt="Skillescape AI toolbox"
             width={576}
             height={432}
             className={styles.image}

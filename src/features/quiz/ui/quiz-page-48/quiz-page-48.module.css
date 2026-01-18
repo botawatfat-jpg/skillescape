@@ -1,0 +1,19 @@
+.highlight {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .options {
+    gap: 12px;
+  }
+}

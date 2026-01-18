@@ -19,11 +19,12 @@ export const QuizPage28 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <QuizTitle>AI automations = Bitcoin 10 years ago</QuizTitle>
+        <QuizTitle>AI automations today = Bitcoin before the boom</QuizTitle>
 
         <QuizDescription>
-          You know that feeling of &quot;I wish I had started earlier&quot;?
-          Learning AI automations today feels like catching a rare early moment.
+          You know that feeling of &quot;I wish I had learned this sooner&quot;?
+
+          Right now, AI automations are at that early, rare moment - and learning them puts you ahead of the curve.
         </QuizDescription>
 
         <div className={styles.imageContainer}>

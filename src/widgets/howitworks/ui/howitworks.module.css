@@ -167,12 +167,14 @@
   }
 
   .name {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .name span,
   .name b {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0px 6px;
+
   }
 
   .description {

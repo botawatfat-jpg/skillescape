@@ -25,8 +25,7 @@ export const QuizPage11 = () => {
       <QuizTitle>How true is this for you?</QuizTitle>
 
       <QuizQuote>
-        &quot;I&apos;m ready to learn new skills that could help me earn more
-        or build something of my own&quot;
+        &quot;I&apos;m ready to learn skills that help me earn more or start something of my own&quot;
       </QuizQuote>
 
       <RatingScale name="readiness" minLabel="not at all" maxLabel="completely" onChange={handleChange} />

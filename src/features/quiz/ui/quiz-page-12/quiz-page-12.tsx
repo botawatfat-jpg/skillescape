@@ -19,10 +19,7 @@ export const QuizPage12 = () => {
       <QuizTitle>You&apos;re not alone</QuizTitle>
 
       <QuizDescription>
-        Most HARD workers felt the same before finding a smarter path.
-        Skillescape&apos;s AI Expert Plan helps you turn your experience into
-        freedom. You don&apos;t need to start over or take big risks - just a
-        clear, guided path to grow income on your pace.
+        Thousands of people were in the same place before discovering Skillescape. With the AI Expert Plan, you don’t need to reinvent yourself - just follow a clear roadmap that helps you earn more and create flexibility in your life.
       </QuizDescription>
 
       <div className={styles.imageContainer}>

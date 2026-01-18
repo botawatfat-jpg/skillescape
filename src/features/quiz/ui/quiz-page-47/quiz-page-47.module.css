@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.ratingBox {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px auto;
+  max-width: 600px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.ratingText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.reviewCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px auto 32px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reviewStars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.reviewAuthor {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.separator {
+  color: #ccc;
+}
+
+.reviewLocation {
+  color: #666;
+}
+
+.reviewDate {
+  font-size: 14px;
+  color: #999;
+  margin-left: auto;
+}
+
+.reviewTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.reviewText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.button {
+  min-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .ratingBox {
+    padding: 20px;
+  }
+
+  .stars svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ratingText {
+    font-size: 16px;
+  }
+
+  .reviewCard {
+    padding: 20px;
+  }
+
+  .reviewHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviewDate {
+    margin-left: 0;
+  }
+
+  .reviewTitle {
+    font-size: 16px;
+  }
+
+  .reviewText {
+    font-size: 14px;
+  }
+
+  .button {
+    min-width: 280px;
+  }
+}

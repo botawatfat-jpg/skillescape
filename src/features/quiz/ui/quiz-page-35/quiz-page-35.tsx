@@ -21,12 +21,11 @@ export const QuizPage35 = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <QuizTitle>
-          Your personal AI Learning Plan - simple and clear!
+          Your step-by-step AI Learning Plan
         </QuizTitle>
 
         <QuizDescription>
-          No complicated theory. No overwhelm. Just small, guided steps you can
-          follow!
+          No fluff, no overwhelm. Just small, guided steps you can follow with confidence.
         </QuizDescription>
 
         <div className={styles.lottieContainer}>

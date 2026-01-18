@@ -1,0 +1,256 @@
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    min-height: 56px;
+}
+
+.cardActive {
+    border-color: #2563eb;
+}
+
+.cardLabel {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.checkIcon {
+    color: #2563eb;
+}
+
+.progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progressBar {
+    width: 200px;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progressText {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    min-width: 35px;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.modalSubtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.modalButtons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.modalButton {
+    min-width: 120px;
+}
+
+/* Reviews Section */
+.reviewsSection {
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.reviewsTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.reviewCard {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.reviewStars {
+    display: flex;
+    gap: 2px;
+}
+
+.reviewMeta {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.reviewDate {
+    font-size: 14px;
+    color: #999;
+    margin-left: auto;
+}
+
+.reviewTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+}
+
+.reviewText {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+.button {
+    min-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        gap: 24px;
+    }
+
+    .card {
+        padding: 14px 16px;
+        min-height: 52px;
+    }
+
+    .cardLabel {
+        font-size: 14px;
+    }
+
+    .progressBar {
+        width: 150px;
+    }
+
+    .modal {
+        padding: 24px;
+    }
+
+    .modalTitle {
+        font-size: 18px;
+    }
+
+    .modalButtons {
+        flex-direction: column;
+    }
+
+    .modalButton {
+        min-width: 100%;
+    }
+
+    .reviewsSection {
+        margin-top: 32px;
+        padding-top: 32px;
+    }
+
+    .reviewsTitle {
+        font-size: 20px;
+    }
+
+    .reviewCard {
+        padding: 20px;
+    }
+
+    .reviewHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reviewDate {
+        margin-left: 0;
+    }
+
+    .reviewTitle {
+        font-size: 16px;
+    }
+
+    .reviewText {
+        font-size: 14px;
+    }
+
+    .button {
+        min-width: 280px;
+    }
+}

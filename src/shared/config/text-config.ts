@@ -23,7 +23,7 @@ export const textConfig = {
     cta: "Take the FREE quiz to receive a personalized roadmap and start earning from home!",
     badges: {
       users: "100k+ learners",
-      trustpilot: "4.5 user rating",
+      trustpilot: "4.6 user rating",
     },
   },
 
@@ -64,34 +64,34 @@ export const textConfig = {
     items: [
       {
         title: "Freelance Copywriter",
-        info: ["5 modules", "45 lessons", "15 learning hours"],
+        info: ["4 modules", "32 lessons", "12 hours"],
         status: "Course",
         description:
-          "Develop the core writing skills that businesses pay for. You’ll learn how to craft attention-grabbing headlines, engaging landing pages, high-converting ads, and persuasive email sequences. We cover the psychology behind effective messaging, practical writing formulas, and how to confidently offer copywriting services using AI tools.",
+          "Learn the essentials of writing ads, pages, and emails that convert - with AI helping you write faster and better. ChatGPT · Jasper · Notion · Grammarly",
         image: "/assets/courses/1.png",
       },
       {
-        title: "Media Buyer/Facebook Ads Manager",
-        info: ["6 modules", "48 lessons", "16 learning hours"],
+        title: "Media Buyer / Facebook Ads",
+        info: ["5 modules", "36 lessons", "14 hours"],
         status: "Course",
         description:
-          "Master the essentials of running profitable Facebook & Instagram ads. You’ll learn how to launch campaigns, analyze performance, scale winning ads, and help brands grow through paid traffic. Perfect if you want to freelance with online stores, coaches, or digital businesses that rely on consistent leads and sales.",
+          "Understand how to run profitable Facebook & Instagram ads, analyze results, and scale winning campaigns for clients. Meta Ads Manager · Pixel · Google Analytics · AdSpy",
         image: "/assets/courses/2.png",
       },
       {
         title: "Social Media Manager",
-        info: ["6 modules", "46 lessons", "13 learning hours"],
+        info: ["5 modules", "38 lessons", "11 hours"],
         status: "Course",
         description:
-          "Learn how to build and manage social media accounts professionally. From content planning and scheduling to analytics, trends, and growth strategies — you’ll understand what makes content go viral. You’ll practice creating scroll-stopping posts for Instagram, TikTok, and other platforms, while learning how to turn traffic into income.",
+          "Master content planning, posting, and analytics. Create viral-style content and manage social profiles professionally. Instagram · TikTok · Canva · CapCut · Creator Studio",
         image: "/assets/courses/3.png",
       },
       {
-        title: "AI Powered Problem Solver",
-        info: ["6 modules", "48 lessons", "16 learning hours"],
+        title: "AI-Powered Problem Solver",
+        info: ["5 modules", "40 lessons", "15 hours"],
         status: "Course",
         description:
-          "Discover how to use modern AI tools—such as ChatGPT, Midjourney, and automation platforms—to deliver high-impact services. You’ll learn how to create visuals, speed up content production, automate workflows, and build practical AI bots. This track teaches you how to solve real business problems with AI and offer ready-to-sell solutions.",
+          "Use AI tools to automate work, create content quickly, and build simple AI systems that solve real business tasks. ChatGPT · Midjourney · Make.com · n8n · Claude",
         image: "/assets/courses/4.png",
       },
     ],
@@ -254,7 +254,7 @@ export const textConfig = {
       {
         question: "What is Skillescape?",
         answer:
-          "Skillescape is your path to independence through freelancing and AI. Learn at your own pace, from any location, and gain practical, in-demand skills. Build a career aligned with your goals and lifestyle. We provide flexibility, growth opportunities, and the ability to turn your work into something truly fulfilling.",
+          "Simply create your Skillescape account and follow the onboarding guide. You'll begin with the beginner-friendly AI Starter Kit, practice with real tools, and follow your personalized plan to complete your first client-ready tasks.",
       },
       {
         question: "How do I get started?",

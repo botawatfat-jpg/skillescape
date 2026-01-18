@@ -25,8 +25,7 @@ export const QuizPage10 = () => {
       <QuizTitle>How true is this for you?</QuizTitle>
 
       <QuizQuote>
-        &quot;I want more freedom and flexibility in how I work and earn - maybe
-        even start something online&quot;
+        &quot;I want more control over my time and income - maybe by building something online&quot;
       </QuizQuote>
 
       <RatingScale name="freedom" minLabel="not at all" maxLabel="completely" onChange={handleChange} />
