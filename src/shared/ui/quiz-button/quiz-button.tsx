@@ -30,16 +30,19 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
   onClick,
 }) => {
   const [isPending, startTransition] = useTransition();
-  const { trackButtonClick, trackQuizStart } = useAnalytics();
+  const { trackButtonClick, trackEvent } = useAnalytics();
 
   const handleClick = () => {
     // Отслеживаем клик на кнопку квиза
     const buttonText = typeof children === "string" ? children : "Quiz Button";
     trackButtonClick(buttonText);
 
-    // Если это переход на квиз, отслеживаем начало квиза
+    // Если это CTA для квиза, отслеживаем CTA клик (НЕ quiz_start!)
     if (href === "/quiz" || href?.includes("quiz")) {
-      trackQuizStart();
+      trackEvent("quiz_cta_click", {
+        cta_text: buttonText,
+        cta_location: typeof window !== "undefined" ? window.location.pathname : undefined,
+      });
     }
 
     if (onClick) {
@@ -56,7 +59,10 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
       trackButtonClick(buttonText);
 
       if (href === "/quiz" || href?.includes("quiz")) {
-        trackQuizStart();
+        trackEvent("quiz_cta_click", {
+          cta_text: buttonText,
+          cta_location: typeof window !== "undefined" ? window.location.pathname : undefined,
+        });
       }
     };
 

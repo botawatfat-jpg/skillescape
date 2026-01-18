@@ -62,7 +62,8 @@ export function isAnalyticsEnabled(): boolean {
 }
 
 /**
- * Хелпер для отправки кастомных событий в GTM
+ * @deprecated Используйте pushDL из @/shared/lib/analytics/push-datalayer
+ * или используйте useAnalytics() hook
  */
 export function trackEvent(
   eventName: string,
@@ -77,7 +78,8 @@ export function trackEvent(
 }
 
 /**
- * Хелпер для отправки событий конверсии
+ * @deprecated Используйте pushDL("conversion", { conversion_name, value })
+ * или используйте useAnalytics() hook
  */
 export function trackConversion(conversionName: string, value?: number) {
   trackEvent("conversion", {
@@ -87,7 +89,8 @@ export function trackConversion(conversionName: string, value?: number) {
 }
 
 /**
- * Хелпер для отправки событий покупки
+ * @deprecated Используйте pushDL("purchase", { transaction_id, value, currency })
+ * или используйте useAnalytics() hook
  */
 export function trackPurchase(transactionId: string, value: number) {
   trackEvent("purchase", {
@@ -95,11 +98,4 @@ export function trackPurchase(transactionId: string, value: number) {
     value: value,
     currency: "USD",
   });
-}
-
-// Расширяем Window interface для TypeScript
-declare global {
-  interface Window {
-    dataLayer: Array<Record<string, unknown>>;
-  }
 }

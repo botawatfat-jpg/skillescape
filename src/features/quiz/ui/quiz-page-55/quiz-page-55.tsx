@@ -7,6 +7,7 @@ import { QuizTitle } from "@/features/quiz/shared";
 import styles from "./quiz-page-55.module.css";
 import { useQuizStore } from "@/shared/store";
 import Image from "next/image";
+import { useAnalytics } from "@/shared/lib/analytics";
 
 const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,6 +17,7 @@ const validateEmail = (email: string): boolean => {
 export const QuizPage55 = () => {
     const router = useRouter();
     const { updateQuizData } = useQuizStore();
+    const { trackLeadSubmit, trackFormSubmit } = useAnalytics();
     const [email, setEmail] = useState("");
     const [agreeToReceive, setAgreeToReceive] = useState(false);
     const [emailError, setEmailError] = useState("");
@@ -47,6 +49,13 @@ export const QuizPage55 = () => {
 
         // All validations passed
         updateQuizData({ email, agreeToReceive });
+        
+        // GTM: Отслеживаем отправку лида (email capture)
+        // Событие сработает только один раз за сессию
+        // ВАЖНО: передаём quiz_id для атрибуции и A/B тестов
+        trackLeadSubmit("quiz_email", "ai_quiz_v1");
+        trackFormSubmit("quiz_email_form");
+        
         router.push("/quiz/questions?pageId=56");
     };
 

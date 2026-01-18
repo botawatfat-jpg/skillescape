@@ -61,13 +61,22 @@ import {
   QuizPage56,
   QuizPage57,
 } from "@/features/quiz/ui";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useAnalytics } from "@/shared/lib/analytics";
+import { useQuizStore } from "@/shared/store";
 
 export const QuizQuestionsPage: React.FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pageId = Number(searchParams?.get("pageId")) || 0;
+
+  // Analytics
+  const { trackQuizStart, trackQuizProgress, trackEvent } = useAnalytics();
+  const lastTrackedProgress = useRef<number>(-1);
+
+  // Quiz data для отправки в GTM
+  const { quizData } = useQuizStore();
 
   const handleBack = () => {
     router.back();
@@ -384,7 +393,7 @@ export const QuizQuestionsPage: React.FC = () => {
         return {
           content: <QuizPage41 />,
           progress: 0,
-          title: "Skillescape",
+          title: "",
           withLayout: true,
         };
       case 42:
@@ -512,6 +521,70 @@ export const QuizQuestionsPage: React.FC = () => {
         return null;
     }
   };
+
+
+  // GTM Analytics: Отслеживание прогресса квиза
+  useEffect(() => {
+    const content = renderContent();
+
+    if (!content) return;
+
+    const quizId = "ai_quiz_v1";
+    const progress = content.progress || 0;
+    const title = content.title || "";
+    const isMotivationScreen = title === ""; // Мотивационный экран если title пустой
+
+    // Отслеживаем начало квиза на первой странице
+    if (pageId === 1) {
+      trackQuizStart(quizId);
+    }
+
+    // Отслеживаем прогресс только если:
+    // 1. Прогресс больше 0
+    // 2. Это не мотивационный экран
+    // 3. Прогресс изменился с последнего отслеживания
+    if (progress > 0 && !isMotivationScreen && progress !== lastTrackedProgress.current) {
+      trackQuizProgress(progress, quizId);
+      lastTrackedProgress.current = progress;
+    }
+
+    // Отслеживаем просмотр результата на финальной странице (57)
+    if (pageId === 57) {
+      // Отправляем все данные квиза в GTM как JSON
+      trackEvent("quiz_result_view", {
+        quiz_id: quizId,
+        // Основные данные
+        user_goal: quizData.goal || null,
+        user_status: quizData.status || null,
+        user_experience: quizData.experience || null,
+        // Навыки
+        coding_level: quizData.coding || null,
+        freelancing_level: quizData.freelancing || null,
+        ai_tools: quizData.aiTools || [],
+        // Финансы
+        income_goal: quizData.incomeGoal || null,
+        goal_amount: quizData.goalAmount || null,
+        // Мотивация
+        readiness: quizData.readiness || null,
+        guided_plan: quizData.guidedPlan || null,
+        // Контакты (не передаем PII - только факт наличия)
+        has_email: !!quizData.email,
+        has_name: !!quizData.name,
+        // Дополнительно
+        work_style: quizData.workStyle || null,
+        ideal_hours: quizData.idealHours || null,
+        time_commitment: quizData.timeCommitment || null,
+      });
+
+      if (process.env.NODE_ENV === "development") {
+        console.log("[Quiz Result] Full data sent to GTM:", {
+          quiz_id: quizId,
+          quizData,
+        });
+      }
+    }
+  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData]);
+
 
   const pageData = renderContent();
 

@@ -6,15 +6,28 @@ import { Button } from "@/shared/ui";
 import { QuizTitle } from "@/features/quiz/shared";
 import styles from "./quiz-page-57.module.css";
 import { useQuizStore } from "@/shared/store";
+import { useAnalytics } from "@/shared/lib/analytics";
 import Lottie from "lottie-react";
 import animationData from "../../../../../public/assets/quiz/graph.json";
 
 export const QuizPage57 = () => {
     const router = useRouter();
     const { quizData } = useQuizStore();
+    const { trackButtonClick, trackEvent } = useAnalytics();
     const name = quizData?.name || "there";
 
     const handleSeePlan = () => {
+        // GTM: Отслеживаем клик на кнопку просмотра плана
+        trackButtonClick("See My Plan", "/quiz/questions?pageId=57");
+        
+        // GTM: Дополнительное событие с контекстом пользователя
+        trackEvent("plan_cta_click", {
+          user_goal: quizData?.goal || "unknown",
+          user_status: quizData?.status || "unknown",
+          income_goal: quizData?.incomeGoal || "unknown",
+          has_email: !!quizData?.email,
+        });
+        
         router.push("/selling-page");
     };
 

@@ -1,29 +1,47 @@
 # Analytics Library
 
-Библиотека для работы с Google Tag Manager и аналитикой.
+Production-ready Google Tag Manager integration with proper event tracking, deduplication, and SSR safety.
 
-## Быстрый старт
+## Quick Start
 
-### 1. Использование в клиентских компонентах
+### Core GTM Events (Configured in GTM)
+
+The following events are already set up in GTM with GA4 Event tags:
+
+1. **quiz_start** (quiz_id) - Fires once per session
+2. **quiz_progress** (quiz_id, progress_percent)
+3. **quiz_result_view** (quiz_id, result_type)
+4. **lead_submit** (lead_type) - Fires once per session
+
+### Basic Usage
 
 ```tsx
 "use client";
 
-import { useAnalytics } from "@/shared/lib/analytics/use-analytics";
+import { useAnalytics } from "@/shared/lib/analytics";
 
-export function MyComponent() {
-  const { trackButtonClick, trackQuizStart } = useAnalytics();
+export function QuizPage() {
+  const {
+    trackQuizStart,
+    trackQuizProgress,
+    trackQuizResultView,
+    trackLeadSubmit,
+  } = useAnalytics();
 
-  const handleStartQuiz = () => {
-    trackQuizStart();
-    // ... ваша логика
+  useEffect(() => {
+    // Fires only once per session for this quiz_id
+    trackQuizStart("ai_quiz_v1");
+  }, []);
+
+  const handleProgress = (percent: number) => {
+    trackQuizProgress(percent, "ai_quiz_v1");
   };
 
-  return (
-    <button onClick={() => trackButtonClick("Start Quiz", "HomePage")}>
-      Start Quiz
-    </button>
-  );
+  const handleComplete = (result: string) => {
+    trackQuizResultView(result, "ai_quiz_v1");
+  };
+
+  return <div>Quiz content</div>;
 }
 ```
 

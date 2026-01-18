@@ -1,54 +1,183 @@
 "use client";
 
-import { useCallback } from "react";
-import { trackEvent, trackConversion, trackPurchase } from "@/shared/config/analytics-config";
+import { useCallback, useRef, useEffect } from "react";
+import { pushDL } from "./push-datalayer";
 
 /**
- * React Hook для работы с аналитикой
+ * React Hook для работы с Google Tag Manager аналитикой
  * Используйте в клиентских компонентах для отслеживания событий
+ * 
+ * Поддерживаемые GTM события:
+ * - quiz_start (quiz_id) - начало квиза
+ * - quiz_progress (quiz_id, progress_percent) - прогресс квиза
+ * - quiz_result_view (quiz_id, result_type) - просмотр результата
+ * - lead_submit (lead_type) - отправка лида
  */
 export function useAnalytics() {
+  // Refs для предотвращения дублирования событий
+  const quizStartFiredRef = useRef<Set<string>>(new Set());
+  const leadSubmitFiredRef = useRef<Set<string>>(new Set());
+
+  // Очистка при размонтировании (опционально)
+  useEffect(() => {
+    return () => {
+      // При размонтировании можем очистить refs если нужно
+      // но обычно хотим сохранять состояние между ре-монтированиями
+    };
+  }, []);
+
+  /**
+   * Отслеживание начала квиза
+   * Гарантирует отправку события только один раз за сессию для конкретного quiz_id
+   * 
+   * @param quizId - ID квиза (например "ai_quiz_v1")
+   */
+  const trackQuizStart = useCallback((quizId: string = "ai_quiz_v1") => {
+    // Проверяем sessionStorage для межстраничной защиты
+    const sessionKey = `quiz_start_${quizId}`;
+    
+    if (typeof window !== "undefined") {
+      const alreadyFired = sessionStorage.getItem(sessionKey);
+      if (alreadyFired) {
+        if (process.env.NODE_ENV === "development") {
+          console.log(`[Analytics] quiz_start already fired for ${quizId}, skipping`);
+        }
+        return;
+      }
+    }
+
+    // Проверяем ref для защиты от React StrictMode
+    if (quizStartFiredRef.current.has(quizId)) {
+      return;
+    }
+
+    // Отправляем событие
+    pushDL("quiz_start", {
+      quiz_id: quizId,
+    });
+
+    // Отмечаем как отправленное
+    quizStartFiredRef.current.add(quizId);
+    
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(sessionKey, "true");
+    }
+  }, []);
+
+  /**
+   * Отслеживание прогресса квиза
+   * 
+   * @param progressPercent - Процент прохождения (0-100)
+   * @param quizId - ID квиза
+   */
+  const trackQuizProgress = useCallback((
+    progressPercent: number,
+    quizId: string = "ai_quiz_v1"
+  ) => {
+    pushDL("quiz_progress", {
+      quiz_id: quizId,
+      progress_percent: Math.round(progressPercent),
+    });
+  }, []);
+
+  /**
+   * Отслеживание просмотра результата квиза
+   * 
+   * @param resultType - Тип результата (например "ai_beginner", "ai_expert")
+   * @param quizId - ID квиза
+   */
+  const trackQuizResultView = useCallback((
+    resultType: string,
+    quizId: string = "ai_quiz_v1"
+  ) => {
+    pushDL("quiz_result_view", {
+      quiz_id: quizId,
+      result_type: resultType,
+    });
+  }, []);
+
+  /**
+   * Отслеживание отправки лида
+   * Гарантирует отправку события только один раз за сессию для конкретного типа лида
+   * 
+   * @param leadType - Тип лида (например "quiz_email", "waitlist", "consultation")
+   * @param quizId - ID квиза (для A/B тестов и атрибуции)
+   */
+  const trackLeadSubmit = useCallback((leadType: string, quizId?: string) => {
+    // Проверяем sessionStorage для межстраничной защиты
+    const sessionKey = `lead_submit_${leadType}`;
+    
+    if (typeof window !== "undefined") {
+      const alreadyFired = sessionStorage.getItem(sessionKey);
+      if (alreadyFired) {
+        if (process.env.NODE_ENV === "development") {
+          console.log(`[Analytics] lead_submit already fired for ${leadType}, skipping`);
+        }
+        return;
+      }
+    }
+
+    // Проверяем ref для защиты от React StrictMode
+    if (leadSubmitFiredRef.current.has(leadType)) {
+      return;
+    }
+
+    // Отправляем событие
+    pushDL("lead_submit", {
+      lead_type: leadType,
+      quiz_id: quizId || null, // Важно для A/B тестов и атрибуции
+    });
+
+    // Отмечаем как отправленное
+    leadSubmitFiredRef.current.add(leadType);
+    
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(sessionKey, "true");
+    }
+  }, []);
+
+  /**
+   * Отслеживание завершения квиза (legacy)
+   * @deprecated Используйте trackQuizResultView для GTM событий
+   */
+  const trackQuizComplete = useCallback((score?: number, quizId?: string) => {
+    pushDL("quiz_complete", {
+      quiz_id: quizId || "ai_quiz_v1",
+      score: score,
+      page: typeof window !== "undefined" ? window.location.pathname : undefined,
+    });
+  }, []);
+
   // Отслеживание клика на кнопку
   const trackButtonClick = useCallback((buttonName: string, location?: string) => {
-    trackEvent("button_click", {
+    pushDL("button_click", {
       button_name: buttonName,
-      location: location || window.location.pathname,
-    });
-  }, []);
-
-  // Отслеживание начала квиза
-  const trackQuizStart = useCallback(() => {
-    trackEvent("quiz_start", {
-      page: window.location.pathname,
-    });
-  }, []);
-
-  // Отслеживание завершения квиза
-  const trackQuizComplete = useCallback((score?: number) => {
-    trackEvent("quiz_complete", {
-      score: score,
-      page: window.location.pathname,
+      location: location || (typeof window !== "undefined" ? window.location.pathname : undefined),
     });
   }, []);
 
   // Отслеживание регистрации
   const trackSignUp = useCallback((method: string) => {
-    trackConversion("sign_up");
-    trackEvent("sign_up", {
+    pushDL("sign_up", {
       method: method, // email, google, facebook, etc.
+    });
+    
+    // Также отправляем как конверсию
+    pushDL("conversion", {
+      conversion_name: "sign_up",
     });
   }, []);
 
   // Отслеживание логина
   const trackLogin = useCallback((method: string) => {
-    trackEvent("login", {
+    pushDL("login", {
       method: method,
     });
   }, []);
 
   // Отслеживание просмотра продукта/курса
   const trackViewProduct = useCallback((productName: string, productId?: string) => {
-    trackEvent("view_item", {
+    pushDL("view_item", {
       item_name: productName,
       item_id: productId,
     });
@@ -56,7 +185,7 @@ export function useAnalytics() {
 
   // Отслеживание начала оформления подписки
   const trackBeginCheckout = useCallback((planName: string, value: number) => {
-    trackEvent("begin_checkout", {
+    pushDL("begin_checkout", {
       plan_name: planName,
       value: value,
       currency: "USD",
@@ -66,11 +195,24 @@ export function useAnalytics() {
   // Отслеживание покупки подписки
   const trackSubscriptionPurchase = useCallback(
     (transactionId: string, planName: string, value: number) => {
-      trackPurchase(transactionId, value);
-      trackConversion("subscription_purchase");
-      trackEvent("subscription_purchase", {
+      // E-commerce purchase событие
+      pushDL("purchase", {
+        transaction_id: transactionId,
+        value: value,
+        currency: "USD",
+      });
+      
+      // Дополнительное событие для подписки
+      pushDL("subscription_purchase", {
         plan_name: planName,
         transaction_id: transactionId,
+        value: value,
+      });
+      
+      // Конверсия
+      pushDL("conversion", {
+        conversion_name: "subscription_purchase",
+        value: value,
       });
     },
     []
@@ -78,7 +220,7 @@ export function useAnalytics() {
 
   // Отслеживание просмотра видео
   const trackVideoView = useCallback((videoName: string, duration?: number) => {
-    trackEvent("video_view", {
+    pushDL("video_view", {
       video_name: videoName,
       duration: duration,
     });
@@ -86,32 +228,48 @@ export function useAnalytics() {
 
   // Отслеживание скачивания
   const trackDownload = useCallback((fileName: string) => {
-    trackEvent("download", {
+    pushDL("download", {
       file_name: fileName,
     });
   }, []);
 
   // Отслеживание поиска
   const trackSearch = useCallback((searchTerm: string) => {
-    trackEvent("search", {
+    pushDL("search", {
       search_term: searchTerm,
     });
   }, []);
 
   // Отслеживание формы
   const trackFormSubmit = useCallback((formName: string) => {
-    trackEvent("form_submit", {
+    pushDL("form_submit", {
       form_name: formName,
     });
+  }, []);
+
+  /**
+   * Универсальное отслеживание события
+   * Используйте для кастомных событий, не покрытых специализированными методами
+   * 
+   * @param eventName - Название события
+   * @param params - Параметры события
+   */
+  const trackEvent = useCallback((eventName: string, params?: Record<string, unknown>) => {
+    pushDL(eventName, params);
   }, []);
 
   return {
     // Базовое событие
     trackEvent,
     
-    // Специфичные события
-    trackButtonClick,
+    // GTM события (новые, приоритетные)
     trackQuizStart,
+    trackQuizProgress,
+    trackQuizResultView,
+    trackLeadSubmit,
+    
+    // Другие специфичные события
+    trackButtonClick,
     trackQuizComplete,
     trackSignUp,
     trackLogin,

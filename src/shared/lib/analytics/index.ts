@@ -3,10 +3,12 @@
  */
 
 export { useAnalytics } from "./use-analytics";
+export { pushDL, clearDataLayer, isDataLayerAvailable } from "./push-datalayer";
 export {
   analyticsConfig,
+  isAnalyticsEnabled,
+  // Deprecated - используйте pushDL или useAnalytics()
   trackEvent,
   trackConversion,
   trackPurchase,
-  isAnalyticsEnabled,
 } from "@/shared/config/analytics-config";
