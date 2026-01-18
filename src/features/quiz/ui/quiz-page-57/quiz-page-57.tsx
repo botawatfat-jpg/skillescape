@@ -19,15 +19,15 @@ export const QuizPage57 = () => {
     const handleSeePlan = () => {
         // GTM: Отслеживаем клик на кнопку просмотра плана
         trackButtonClick("See My Plan", "/quiz/questions?pageId=57");
-        
+
         // GTM: Дополнительное событие с контекстом пользователя
         trackEvent("plan_cta_click", {
-          user_goal: quizData?.goal || "unknown",
-          user_status: quizData?.status || "unknown",
-          income_goal: quizData?.incomeGoal || "unknown",
-          has_email: !!quizData?.email,
+            user_goal: quizData?.goal || "unknown",
+            user_status: quizData?.status || "unknown",
+            income_goal: quizData?.incomeGoal || "unknown",
+            has_email: !!quizData?.email,
         });
-        
+
         router.push("/selling-page");
     };
 
