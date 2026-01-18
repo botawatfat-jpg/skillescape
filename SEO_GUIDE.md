@@ -227,19 +227,46 @@ npm run start
 
 #### 10. Настроить Google Analytics и Tag Manager
 
-Добавьте в `app/layout.tsx`:
+✅ **УЖЕ НАСТРОЕНО!** Google Tag Manager интегрирован в проект.
+
+**Текущая конфигурация:**
+- GTM ID: `GTM-T3S2P2LK`
+- Конфиг: `src/shared/config/analytics-config.ts`
+- Хук для отслеживания: `useAnalytics()`
+- Автоматическое отслеживание кликов на QuizButton
+
+**Как использовать:**
 
 ```tsx
-<Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
-<Script id="google-analytics">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-  `}
-</Script>
+import { useAnalytics } from "@/shared/lib/analytics";
+
+export function MyComponent() {
+  const { trackButtonClick, trackQuizComplete } = useAnalytics();
+  
+  const handleAction = () => {
+    trackButtonClick("My Button");
+    // ваша логика
+  };
+  
+  return <button onClick={handleAction}>Click me</button>;
+}
 ```
+
+**Доступные события:**
+- `trackQuizStart()` - начало квиза
+- `trackQuizComplete(score)` - завершение квиза
+- `trackSignUp(method)` - регистрация
+- `trackLogin(method)` - вход
+- `trackSubscriptionPurchase(id, plan, value)` - покупка
+- И многие другие (см. `src/shared/lib/analytics/README.md`)
+
+**Следующие шаги:**
+1. Откройте [Google Tag Manager](https://tagmanager.google.com/)
+2. Проверьте, что контейнер `GTM-T3S2P2LK` работает
+3. Настройте теги для GA4, Facebook Pixel, и других сервисов
+4. Используйте Preview Mode для тестирования
+
+См. полное руководство: `src/shared/lib/analytics/README.md`
 
 #### 11. Реализовать страницу 404
 

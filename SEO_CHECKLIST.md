@@ -76,10 +76,14 @@
   - [ ] [Yandex Webmaster](https://webmaster.yandex.com/)
   - [ ] [Bing Webmaster Tools](https://www.bing.com/webmasters)
 
-- [ ] **Настроить Google Analytics**:
-  - [ ] Создать GA4 property
-  - [ ] Добавить tracking код в layout
-  - [ ] Настроить события конверсии
+- [x] **Настроить Google Analytics**:
+  - [x] Google Tag Manager интегрирован (GTM-T3S2P2LK)
+  - [x] Создан хук `useAnalytics()` для отслеживания событий
+  - [x] Автоматическое отслеживание кликов на QuizButton
+  - [ ] Настроить теги в GTM для GA4
+  - [ ] Настроить события конверсии в GTM
+  - [ ] Добавить Facebook Pixel через GTM (опционально)
+  - [ ] Добавить TikTok Pixel через GTM (опционально)
 
 - [ ] **Проверить все изображения**:
   - [ ] Все изображения имеют alt текст

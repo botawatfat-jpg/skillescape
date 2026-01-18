@@ -3,6 +3,7 @@
 import { useTransition } from "react";
 import { Button } from "@/shared/ui";
 import { MoveRightIcon } from "lucide-react";
+import { useAnalytics } from "@/shared/lib/analytics";
 
 interface QuizButtonProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ interface QuizButtonProps {
 /**
  * Client Component для кнопки квиза
  * Использует useTransition для оптимизации UX при навигации
+ * Автоматически отслеживает клики через GTM
  */
 export const QuizButton: React.FC<QuizButtonProps> = ({
   children,
@@ -28,8 +30,18 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
   onClick,
 }) => {
   const [isPending, startTransition] = useTransition();
+  const { trackButtonClick, trackQuizStart } = useAnalytics();
 
   const handleClick = () => {
+    // Отслеживаем клик на кнопку квиза
+    const buttonText = typeof children === "string" ? children : "Quiz Button";
+    trackButtonClick(buttonText);
+
+    // Если это переход на квиз, отслеживаем начало квиза
+    if (href === "/quiz" || href?.includes("quiz")) {
+      trackQuizStart();
+    }
+
     if (onClick) {
       startTransition(() => {
         onClick();
@@ -37,8 +49,17 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
     }
   };
 
-  // Если есть href, просто используем Button как ссылку без transition логики
+  // Если есть href, используем Button как ссылку с отслеживанием
   if (href) {
+    const handleLinkClick = () => {
+      const buttonText = typeof children === "string" ? children : "Quiz Button";
+      trackButtonClick(buttonText);
+
+      if (href === "/quiz" || href?.includes("quiz")) {
+        trackQuizStart();
+      }
+    };
+
     return (
       <Button
         variant={variant}
@@ -46,6 +67,7 @@ export const QuizButton: React.FC<QuizButtonProps> = ({
         size={size}
         shrinkOnHover={shrinkOnHover}
         href={href}
+        onClick={handleLinkClick}
       >
         {children}
         {variant !== "secondary" && <MoveRightIcon size={16} />}
