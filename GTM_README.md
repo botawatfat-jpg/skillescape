@@ -224,6 +224,16 @@ yarn dev
 2. **GA4 DebugView** - включить и посмотреть события
 3. **Проверить** что GTM ID правильный (`GTM-T3S2P2LK`)
 
+### ⚠️ CSP блокирует GTM? (Content Security Policy)
+
+**Ошибка:** `violates the following Content Security Policy directive`
+
+**Решение:**
+1. ✅ CSP уже настроен в `next.config.ts`
+2. **Перезапустить dev сервер** (`yarn dev`)
+3. **Очистить кеш браузера** (Hard Reload)
+4. **Прочитать** [CSP_GTM_FIX.md](./CSP_GTM_FIX.md) для деталей
+
 ---
 
 ## 📝 Код примеры
@@ -306,6 +316,9 @@ GTM_README.md (ты здесь)
 ├── 🛠️ Для разработчиков
 │   ├── src/shared/lib/analytics/GTM_USAGE_GUIDE.md
 │   └── src/shared/lib/analytics/EXAMPLES.tsx
+│
+├── 🔒 Безопасность
+│   └── CSP_GTM_FIX.md (Content Security Policy для GTM)
 │
 ├── 📈 Будущее
 │   └── GTM_FUTURE_IMPROVEMENTS.md

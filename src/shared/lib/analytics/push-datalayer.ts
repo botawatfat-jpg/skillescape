@@ -37,9 +37,7 @@ export function pushDL(
 ): void {
   // SSR guard
   if (typeof window === "undefined") {
-    if (process.env.NODE_ENV === "development") {
-      console.log("[Analytics SSR]", eventName, payload);
-    }
+    console.log("[Analytics SSR]", eventName, payload);
     return;
   }
 
@@ -55,10 +53,8 @@ export function pushDL(
   // Отправляем в dataLayer
   window.dataLayer.push(eventData);
 
-  // Логируем в development режиме
-  if (process.env.NODE_ENV === "development") {
-    console.log("[GTM DataLayer]", eventData);
-  }
+  // Логируем события
+  console.log("[GTM DataLayer]", eventData);
 }
 
 /**

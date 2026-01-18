@@ -576,12 +576,6 @@ export const QuizQuestionsPage: React.FC = () => {
         time_commitment: quizData.timeCommitment || null,
       });
 
-      if (process.env.NODE_ENV === "development") {
-        console.log("[Quiz Result] Full data sent to GTM:", {
-          quiz_id: quizId,
-          quizData,
-        });
-      }
     }
   }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData]);
 

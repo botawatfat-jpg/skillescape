@@ -49,6 +49,11 @@ yarn dev
 
 # 2. Открыть консоль (F12)
 
+# ⚠️ Если видите ошибку CSP:
+# "violates the following Content Security Policy directive"
+# → Перезапустите сервер и очистите кеш (Hard Reload)
+# → Подробнее в CSP_GTM_FIX.md
+
 # 3. Кликнуть по "Take Quiz" на главной
 # В консоли увидите:
 # [GTM DataLayer] { event: "quiz_cta_click", cta_text: "Take Our Quiz", cta_location: "/" }
@@ -59,7 +64,7 @@ yarn dev
 # [GTM DataLayer] { event: "quiz_progress", progress_percent: 50, ... }
 # [GTM DataLayer] { event: "quiz_result_view", user_goal: "...", ... }
 
-# 4. Проверить dataLayer
+# 5. Проверить dataLayer
 window.dataLayer
 ```
 

@@ -39,9 +39,7 @@ export function useAnalytics() {
     if (typeof window !== "undefined") {
       const alreadyFired = sessionStorage.getItem(sessionKey);
       if (alreadyFired) {
-        if (process.env.NODE_ENV === "development") {
-          console.log(`[Analytics] quiz_start already fired for ${quizId}, skipping`);
-        }
+        console.log(`[Analytics] quiz_start already fired for ${quizId}, skipping`);
         return;
       }
     }
@@ -110,9 +108,7 @@ export function useAnalytics() {
     if (typeof window !== "undefined") {
       const alreadyFired = sessionStorage.getItem(sessionKey);
       if (alreadyFired) {
-        if (process.env.NODE_ENV === "development") {
-          console.log(`[Analytics] lead_submit already fired for ${leadType}, skipping`);
-        }
+        console.log(`[Analytics] lead_submit already fired for ${leadType}, skipping`);
         return;
       }
     }

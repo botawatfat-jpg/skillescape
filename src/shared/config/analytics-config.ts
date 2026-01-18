@@ -52,13 +52,7 @@ export const analyticsConfig = {
  * Проверяет, включена ли аналитика
  */
 export function isAnalyticsEnabled(): boolean {
-  // В production всегда включено, если GTM настроен
-  if (process.env.NODE_ENV === "production") {
     return analyticsConfig.gtm.enabled;
-  }
-
-  // В development можно включить через env переменную
-  return process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === "true";
 }
 
 /**

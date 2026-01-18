@@ -17,7 +17,6 @@ export interface WebVitalsMetric {
  */
 export function sendToAnalytics(metric: WebVitalsMetric) {
   // В production отправляем в Google Analytics, Vercel Analytics и т.д.
-  if (process.env.NODE_ENV === "production") {
     const body = JSON.stringify(metric);
     const url = "/api/analytics";
 
@@ -32,10 +31,6 @@ export function sendToAnalytics(metric: WebVitalsMetric) {
         headers: { "Content-Type": "application/json" },
       });
     }
-  } else {
-    // В development просто логируем
-    console.log("[Web Vitals]", metric.name, metric.value, metric.rating);
-  }
 }
 
 /**
