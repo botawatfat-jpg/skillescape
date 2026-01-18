@@ -71,11 +71,17 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com",
-              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://analytics.google.com https://*.google-analytics.com",
+              // GTM и GA скрипты (с wildcard для всех поддоменов)
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com",
+              // Отдельно для <script> тегов (для лучшей совместимости)
+              "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.google-analytics.com",
+              // API запросы (события GTM/GA)
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com",
+              // Пиксели и изображения
               "img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com",
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",
+              // GTM noscript iframe
               "frame-src https://www.googletagmanager.com",
               "object-src 'none'",
               "base-uri 'self'",

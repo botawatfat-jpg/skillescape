@@ -26,19 +26,30 @@ The action has been blocked.
   value: [
     "default-src 'self'",
     
-    // 🔥 GTM и GA скрипты
+    // 🔥 GTM и GA скрипты (с wildcard для всех поддоменов)
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' " +
       "https://www.googletagmanager.com " +
+      "https://*.googletagmanager.com " +
       "https://tagmanager.google.com " +
-      "https://www.google-analytics.com",
+      "https://www.google-analytics.com " +
+      "https://*.google-analytics.com",
     
-    // 🔥 GTM и GA API запросы
+    // 🔥 Отдельно для <script> тегов (для лучшей совместимости)
+    "script-src-elem 'self' 'unsafe-inline' " +
+      "https://www.googletagmanager.com " +
+      "https://*.googletagmanager.com " +
+      "https://tagmanager.google.com " +
+      "https://www.google-analytics.com " +
+      "https://*.google-analytics.com",
+    
+    // 🔥 API запросы (события GTM/GA) - с wildcard для всех поддоменов
     "connect-src 'self' " +
       "https://www.google-analytics.com " +
+      "https://*.google-analytics.com " +
+      "https://analytics.google.com " +
       "https://region1.google-analytics.com " +
       "https://www.googletagmanager.com " +
-      "https://analytics.google.com " +
-      "https://*.google-analytics.com",
+      "https://*.googletagmanager.com",
     
     // 🔥 GA пиксели и изображения
     "img-src 'self' data: https: " +
@@ -135,16 +146,30 @@ window.dataLayer
 - ✅ `'unsafe-inline'` - инлайн скрипты (нужно для GTM кода в `<head>`)
 - ✅ `'unsafe-eval'` - eval() (нужно для некоторых GTM тегов)
 - ✅ `https://www.googletagmanager.com` - GTM скрипты
+- ✅ `https://*.googletagmanager.com` - **все поддомены GTM** (важно!)
 - ✅ `https://tagmanager.google.com` - GTM Preview Mode
 - ✅ `https://www.google-analytics.com` - GA скрипты
+- ✅ `https://*.google-analytics.com` - **все поддомены GA** (важно!)
+
+### `script-src-elem` - Загрузка `<script>` тегов (отдельная директива)
+- ✅ `'self'` - скрипты с нашего домена
+- ✅ `'unsafe-inline'` - инлайн скрипты
+- ✅ `https://www.googletagmanager.com` - GTM скрипты
+- ✅ `https://*.googletagmanager.com` - **все поддомены GTM**
+- ✅ `https://tagmanager.google.com` - GTM Preview Mode
+- ✅ `https://www.google-analytics.com` - GA скрипты
+- ✅ `https://*.google-analytics.com` - **все поддомены GA**
+
+**Зачем отдельная директива?** Некоторые браузеры проверяют `script-src-elem` для `<script>` тегов отдельно от `script-src`.
 
 ### `connect-src` - API запросы (fetch, XHR)
 - ✅ `'self'` - запросы к нашему API
 - ✅ `https://www.google-analytics.com` - отправка событий в GA4
+- ✅ `https://*.google-analytics.com` - **все поддомены GA** (важно!)
+- ✅ `https://analytics.google.com` - GA API
 - ✅ `https://region1.google-analytics.com` - региональные серверы GA4
 - ✅ `https://www.googletagmanager.com` - GTM API
-- ✅ `https://analytics.google.com` - GA API
-- ✅ `https://*.google-analytics.com` - любые поддомены GA
+- ✅ `https://*.googletagmanager.com` - **все поддомены GTM** (важно!)
 
 ### `img-src` - Загрузка изображений
 - ✅ `'self'` - наши изображения
