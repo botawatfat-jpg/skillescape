@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { Logo } from "@/shared/ui";
-import { Button } from "@/shared/ui";
 import styles from "./selling-header.module.css";
 
 export const SellingHeader: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
-    minutes: 8,
-    seconds: 37,
+    minutes: 9,
+    seconds: 55,
   });
 
   useEffect(() => {
@@ -37,16 +36,17 @@ export const SellingHeader: React.FC = () => {
           <Logo />
         </div>
 
-        <div className={styles.content}>
+        <div className={styles.rightContent}>
           <div className={styles.discountInfo}>
             <p className={styles.discountText}>61% discount reserved for:</p>
-            <div className={styles.timer}>
-              <div>{formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}</div>
-            </div>
+            <p className={styles.timer}>
+              {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
+            </p>
           </div>
-          <Button variant="primary" className={styles.ctaButton}>
+
+          <button className={styles.ctaButton}>
             GET MY PLAN
-          </Button>
+          </button>
         </div>
       </div>
     </header>
