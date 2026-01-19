@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 16px;
 }
 
 .content {
@@ -26,6 +27,7 @@
     font-size: 20px;
     font-weight: 600;
     color: var(--color-accent-blue);
+    display: inline-block;
 }
 
 .goalLabel {
@@ -41,6 +43,7 @@
     border-radius: 12px;
     padding: 12px 24px;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .goalBadge p {
@@ -54,6 +57,7 @@
     width: 100%;
     max-width: 576px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .chartWrapper {
@@ -62,25 +66,119 @@
     height: 400px;
 }
 
-
 .button {
     min-width: 400px;
-  }
+}
 
+/* Tablet */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .content {
+        gap: 20px;
+    }
+
+    .predictionContainer {
+        padding: 16px 0;
+    }
+
+    .predictionText {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .goalAmount {
+        font-size: 19px;
+    }
+    
+    .goalLabel {
+        font-size: 15px;
+    }
+    
+    .goalBadge {
+        padding: 10px 20px;
+    }
+
+    .goalBadge p {
+        font-size: 15px;
+    }
+
+    .chartWrapper {
+        height: 350px;
+    }
+
+    .button {
+        min-width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .content {
+        gap: 16px;
+    }
+
+    .predictionContainer {
+        padding: 12px 0;
+    }
+
     .predictionText {
         font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
     }
     
     .goalAmount {
         font-size: 18px;
+        display: block;
+        margin: 4px 0;
     }
     
     .goalLabel {
         font-size: 14px;
+        margin-bottom: 6px;
     }
     
+    .goalBadge {
+        padding: 8px 16px;
+        border-radius: 10px;
+    }
+
     .goalBadge p {
         font-size: 14px;
+    }
+
+    .chartWrapper {
+        height: 280px;
+    }
+
+    .button {
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .predictionText {
+        font-size: 13px;
+    }
+
+    .goalAmount {
+        font-size: 17px;
+    }
+
+    .chartWrapper {
+        height: 250px;
     }
 }

@@ -47,7 +47,7 @@ export const QuizPage22 = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/templates/teaser-default/media/15.webp"
+            src="/assets/quiz/quiz22.png"
             alt="Income growth"
             width={320}
             height={320}

@@ -29,7 +29,7 @@ export const QuizPage28 = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/202/media/AI automations bitcoin.webp"
+            src="/assets/quiz/quiz28.png"
             alt="AI automations"
             width={576}
             height={432}

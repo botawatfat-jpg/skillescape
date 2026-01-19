@@ -31,7 +31,7 @@ export const QuizPage36 = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/186/media/Aspect Ratio (1).webp"
+            src="/assets/quiz/quiz28.png"
             alt="Start your journey"
             width={576}
             height={432}

@@ -18,23 +18,18 @@ export const GenderSelection: React.FC = () => {
   const handleSelect = (gender: "male" | "female") => {
     setSelectedGender(gender);
 
-    // Сохраняем в Zustand store
     updateQuizData({ gender });
-
-    // Редирект на страницу с вопросами
-    setTimeout(() => {
-      router.push("/quiz/questions?pageId=1");
-    }, 300);
+    router.push("/quiz/questions?pageId=1");
   };
 
   return (
     <div className={styles.container}>
       {/* Gender Cards */}
-      <div className={styles.cards}>
+      <div onClick={() => handleSelect("male")} className={styles.cards}>
         <button
           className={`${styles.card} ${selectedGender === "male" ? styles.selected : ""
             }`}
-          onClick={() => handleSelect("male")}
+
         >
           <div className={styles.imageWrapper}>
             <Image

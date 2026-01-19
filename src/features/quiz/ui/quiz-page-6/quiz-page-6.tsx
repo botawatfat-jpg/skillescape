@@ -61,7 +61,7 @@ export const QuizPage6 = () => {
         {getContent()}
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/10/media/Aspect Ratio.png"
+            src="/assets/quiz/quiz6.png"
             alt="Person using phone"
             width={576}
             height={432}

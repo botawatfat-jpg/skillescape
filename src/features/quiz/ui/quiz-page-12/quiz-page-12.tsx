@@ -24,7 +24,7 @@ export const QuizPage12 = () => {
 
       <div className={styles.imageContainer}>
         <Image
-          src="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.0.4/90/media/Aspect Ratio-1.webp"
+          src="/assets/quiz/quiz12.png"
           alt="People around the world"
           width={576}
           height={432}

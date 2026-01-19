@@ -554,20 +554,35 @@ export const QuizQuestionsPage: React.FC = () => {
       // Отправляем все данные квиза в GTM как JSON
       trackEvent("quiz_result_view", {
         quiz_id: quizId,
-        gender: quizData.gender ?? "unknown",
-        age_group: quizData.age,
-        coding_level: quizData.coding,
-        freelancing_level: quizData.freelancing,
-        income_goal: quizData.incomeGoal,
-        readiness: quizData.readiness,
-        price_threshold: quizData.priceThreshold,
-        work_style: quizData.workStyle,
-        time_commitment: quizData.timeCommitment,
-        email: quizData.email,
+        // Демографические данные
+        gender: quizData.gender || null,
+        age_group: quizData.age || null,
+        // Навыки
+        coding_level: quizData.coding || null,
+        freelancing_level: quizData.freelancing || null,
+        ai_tools: quizData.aiTools || [],
+        // Финансы
+        income_goal: quizData.incomeGoal || null,
+        goal_amount: quizData.goalAmount || null,
+        price_threshold: quizData.priceThreshold || null,
+        // Мотивация
+        readiness: quizData.readiness || null,
+        guided_plan: quizData.guidedPlan || null,
+        // Контакты (НЕ отправляем сам email - только факт наличия)
+        has_email: !!quizData.email,
+        has_name: !!quizData.name,
+        // Рабочие предпочтения
+        work_style: quizData.workStyle || null,
+        ideal_hours: quizData.idealHours || null,
+        time_commitment: quizData.timeCommitment || null,
+        // Опыт и цели
+        user_goal: quizData.goal || null,
+        user_status: quizData.status || null,
+        user_experience: quizData.experience || null,
       });
 
     }
-  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData, renderContent, generateQuizId]);
+  }, [pageId, trackQuizStart, trackQuizProgress, trackEvent, quizData]);
 
 
   const pageData = renderContent();

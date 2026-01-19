@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/shared/ui";
 import { QuizTitle } from "@/features/quiz/shared";
@@ -33,6 +33,19 @@ ChartJS.register(
 export const QuizPage53 = () => {
     const router = useRouter();
     const { quizData } = useQuizStore();
+    const [isMobile, setIsMobile] = useState(false);
+    const [isSmallMobile, setIsSmallMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+            setIsSmallMobile(window.innerWidth <= 480);
+        };
+
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const handleContinue = () => {
         router.push("/quiz/questions?pageId=54");
@@ -118,6 +131,12 @@ export const QuizPage53 = () => {
             const { ctx, chartArea, scales } = chart;
             if (!chartArea) return;
 
+            // Адаптивные размеры для мобильных
+            const fontSize = isSmallMobile ? 9 : isMobile ? 10 : 11;
+            const labelPadding = isSmallMobile ? 6 : isMobile ? 7 : 8;
+            const labelHeight = isSmallMobile ? 26 : isMobile ? 28 : 32;
+            const lineSpacing = isSmallMobile ? 5 : 6;
+
             // Marker 1: "Achieving your goal" at Feb (index 2)
             const febIndex = 2;
             const febX = scales.x.getPixelForValue(febIndex);
@@ -126,7 +145,7 @@ export const QuizPage53 = () => {
             // Draw vertical line from marker to x-axis
             ctx.save();
             ctx.strokeStyle = '#1a1a1a';
-            ctx.lineWidth = 2;
+            ctx.lineWidth = isMobile ? 1.5 : 2;
             ctx.setLineDash([]);
             ctx.beginPath();
             ctx.moveTo(febX, febY);
@@ -138,19 +157,17 @@ export const QuizPage53 = () => {
             ctx.save();
             const label1 = 'Achieving';
             const label1Line2 = 'your goal';
-            ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+            ctx.font = `bold ${fontSize}px system-ui, -apple-system, sans-serif`;
             const label1Width = Math.max(ctx.measureText(label1).width, ctx.measureText(label1Line2).width);
             const label1X = febX;
-            const label1Y = febY - 40;
-            const label1Padding = 8;
-            const label1Height = 32;
+            const label1Y = febY - (isSmallMobile ? 35 : isMobile ? 38 : 40);
             const label1Radius = 4;
 
             // Draw black rounded rectangle background for label
-            const label1RectX = label1X - label1Width / 2 - label1Padding;
-            const label1RectY = label1Y - label1Height / 2;
-            const label1RectW = label1Width + label1Padding * 2;
-            const label1RectH = label1Height;
+            const label1RectX = label1X - label1Width / 2 - labelPadding;
+            const label1RectY = label1Y - labelHeight / 2;
+            const label1RectW = label1Width + labelPadding * 2;
+            const label1RectH = labelHeight;
 
             ctx.fillStyle = '#1a1a1a';
             ctx.beginPath();
@@ -161,8 +178,8 @@ export const QuizPage53 = () => {
             ctx.fillStyle = '#fff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(label1, label1X, label1Y - 6);
-            ctx.fillText(label1Line2, label1X, label1Y + 6);
+            ctx.fillText(label1, label1X, label1Y - lineSpacing);
+            ctx.fillText(label1Line2, label1X, label1Y + lineSpacing);
             ctx.restore();
 
             // Marker 2: "Your Potential" at May (index 5)
@@ -170,25 +187,24 @@ export const QuizPage53 = () => {
             const mayX = scales.x.getPixelForValue(mayIndex);
             const mayY = scales.y.getPixelForValue(values[mayIndex]);
 
-            // Draw label "Your Potential" to the right of the marker
+            // Draw label "Your Potential" to the right/left of the marker
             ctx.save();
             const label2 = 'Your';
             const label2Line2 = 'Potential';
-            ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+            ctx.font = `bold ${fontSize}px system-ui, -apple-system, sans-serif`;
             const label2Width = Math.max(ctx.measureText(label2).width, ctx.measureText(label2Line2).width);
-            const label2Padding = 8;
-            const label2Height = 32;
             const label2Radius = 4;
 
-            // Position label to the right
-            const label2X = mayX - 30;
+            // Position label (adjust for mobile to avoid overflow)
+            const label2OffsetX = isSmallMobile ? -20 : isMobile ? -25 : -30;
+            const label2X = mayX + label2OffsetX;
             const label2Y = mayY;
 
             // Calculate positions for rounded rectangle
-            const label2RectX = label2X - label2Width / 2 - label2Padding;
-            const label2RectY = label2Y - label2Height / 2;
-            const label2RectW = label2Width + label2Padding * 2;
-            const label2RectH = label2Height;
+            const label2RectX = label2X - label2Width / 2 - labelPadding;
+            const label2RectY = label2Y - labelHeight / 2;
+            const label2RectW = label2Width + labelPadding * 2;
+            const label2RectH = labelHeight;
 
             // Draw blue rounded rectangle background for label
             ctx.fillStyle = '#5B7FFF';
@@ -198,11 +214,11 @@ export const QuizPage53 = () => {
 
             // Draw curved arrow/line from label to point
             ctx.strokeStyle = '#5B7FFF';
-            ctx.lineWidth = 2;
+            ctx.lineWidth = isMobile ? 1.5 : 2;
             ctx.beginPath();
             ctx.moveTo(label2RectX, label2Y);
             ctx.quadraticCurveTo(
-                label2RectX - 10,
+                label2RectX - (isMobile ? 8 : 10),
                 label2Y,
                 mayX + 8,
                 mayY
@@ -213,11 +229,11 @@ export const QuizPage53 = () => {
             ctx.fillStyle = '#fff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(label2, label2X, label2Y - 6);
-            ctx.fillText(label2Line2, label2X, label2Y + 6);
+            ctx.fillText(label2, label2X, label2Y - lineSpacing);
+            ctx.fillText(label2Line2, label2X, label2Y + lineSpacing);
             ctx.restore();
         },
-    }), [values]);
+    }), [values, isMobile, isSmallMobile]);
     const chartData = useMemo(() => {
         return {
             labels: months,
@@ -262,15 +278,15 @@ export const QuizPage53 = () => {
         };
     }, [values, months]);
 
-    const chartOptions = {
+    const chartOptions = useMemo(() => ({
         responsive: true,
         maintainAspectRatio: false,
         layout: {
             padding: {
-                top: 40,
-                right: 40,
-                bottom: 20,
-                left: 20,
+                top: isSmallMobile ? 30 : isMobile ? 35 : 40,
+                right: isSmallMobile ? 10 : isMobile ? 20 : 40,
+                bottom: isSmallMobile ? 10 : isMobile ? 15 : 20,
+                left: isSmallMobile ? 5 : isMobile ? 10 : 20,
             },
         },
         plugins: {
@@ -290,7 +306,7 @@ export const QuizPage53 = () => {
                 ticks: {
                     color: "#666",
                     font: {
-                        size: 12,
+                        size: isSmallMobile ? 10 : isMobile ? 11 : 12,
                     },
                 },
             },
@@ -302,10 +318,16 @@ export const QuizPage53 = () => {
                 ticks: {
                     color: "#666",
                     font: {
-                        size: 12,
+                        size: isSmallMobile ? 10 : isMobile ? 11 : 12,
                     },
                     callback: function (value: string | number) {
                         const numValue = typeof value === 'string' ? parseFloat(value) : value;
+                        if (isSmallMobile) {
+                            // Короткий формат для маленьких экранов
+                            if (numValue >= 20000) return "$20k+";
+                            if (numValue >= 1000) return `$${(numValue / 1000).toFixed(0)}k`;
+                            return `$${numValue}`;
+                        }
                         if (numValue >= 20000) return "$20,000+";
                         if (numValue >= 1000) return `$${(numValue / 1000).toFixed(0)},000`;
                         return `$${numValue}`;
@@ -320,7 +342,7 @@ export const QuizPage53 = () => {
             duration: 2000,
             easing: "easeOutQuart" as const,
         },
-    };
+    }), [isMobile, isSmallMobile]);
 
     return (
         <div className={styles.container}>

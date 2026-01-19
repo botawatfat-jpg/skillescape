@@ -478,11 +478,6 @@ export const QuizPage54 = () => {
                     </AnimatePresence>
                 </div>
 
-                <div className="buttonContainerQuiz">
-                    <Button onClick={handleContinue} className={styles.button}>
-                        Continue
-                    </Button>
-                </div>
             </div>
         </div>
     );

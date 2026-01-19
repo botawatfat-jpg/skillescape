@@ -32,7 +32,7 @@ export const QuizPage44 = () => {
 
                 <div className={styles.imageContainer}>
                     <Image
-                        src="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.0.4/154/media/Aspect Ratio-2.webp"
+                        src="/assets/quiz/quiz44.png"
                         alt="Automation examples"
                         width={576}
                         height={432}

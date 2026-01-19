@@ -9,33 +9,33 @@ import styles from "./quiz-page-49.module.css";
 import { Star, Code, Laptop, Bot } from "lucide-react";
 
 export const QuizPage49 = () => {
-  const router = useRouter();
-  const [potentialScore, setPotentialScore] = useState(0);
-  const targetScore = 75;
+    const router = useRouter();
+    const [potentialScore, setPotentialScore] = useState(0);
+    const targetScore = 75;
 
-  useEffect(() => {
-    const duration = 1000; // 2 seconds
-    const steps = 60;
-    const increment = targetScore / steps;
-    const stepDuration = duration / steps;
-    let currentStep = 0;
+    useEffect(() => {
+        const duration = 1000; // 2 seconds
+        const steps = 60;
+        const increment = targetScore / steps;
+        const stepDuration = duration / steps;
+        let currentStep = 0;
 
-    const timer = setInterval(() => {
-      currentStep++;
-      if (currentStep >= steps) {
-        setPotentialScore(targetScore);
-        clearInterval(timer);
-      } else {
-        setPotentialScore(Math.round(increment * currentStep));
-      }
-    }, stepDuration);
+        const timer = setInterval(() => {
+            currentStep++;
+            if (currentStep >= steps) {
+                setPotentialScore(targetScore);
+                clearInterval(timer);
+            } else {
+                setPotentialScore(Math.round(increment * currentStep));
+            }
+        }, stepDuration);
 
-    return () => clearInterval(timer);
-  }, []);
+        return () => clearInterval(timer);
+    }, []);
 
-  const handleContinue = () => {
-    router.push("/quiz/questions?pageId=50");
-  };
+    const handleContinue = () => {
+        router.push("/quiz/questions?pageId=50");
+    };
 
     return (
         <div className={styles.container}>
@@ -124,15 +124,7 @@ export const QuizPage49 = () => {
                             </div>
                         </div>
 
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src="https://d2tpw6ibsnrlae.cloudfront.net/quiz/v6.1.1/44/media/summary.webp"
-                                alt="Summary illustration"
-                                width={400}
-                                height={400}
-                                className={styles.image}
-                            />
-                        </div>
+
                     </div>
                 </div>
 

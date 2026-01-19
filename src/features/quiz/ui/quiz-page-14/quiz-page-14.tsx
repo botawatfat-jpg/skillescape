@@ -62,7 +62,7 @@ export const QuizPage14 = () => {
         {getContent()}
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/18/media/image 10.webp"
+            src="/assets/quiz/quiz14.png"
             alt="Person working on laptop"
             width={576}
             height={432}

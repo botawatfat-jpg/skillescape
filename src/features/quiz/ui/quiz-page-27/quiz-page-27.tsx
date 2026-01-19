@@ -30,7 +30,7 @@ export const QuizPage27 = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/132/media/Screen TimeTeaser.webp"
+            src="/assets/quiz/quiz27.png"
             alt="Learning path"
             width={576}
             height={432}
