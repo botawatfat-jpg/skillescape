@@ -90,23 +90,25 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 10px 16px;
+    padding: 16px;
   }
 
   .container {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 0;
   }
 
   .logoWrapper {
-    order: 2;
+    display: none;
   }
 
   .actions {
-    order: 1;
+    flex: 1;
     flex-direction: row;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .timer {
@@ -114,16 +116,19 @@
   }
 
   .timerLabel {
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .timerValue {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 24px;
   }
 
   .ctaButton {
-    display: none;
+    display: flex;
+    padding: 12px 32px !important;
+    font-size: 14px;
+    line-height: 20px;
   }
 }

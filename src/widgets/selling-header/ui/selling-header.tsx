@@ -37,15 +37,15 @@ export const SellingHeader: React.FC = () => {
         <div className={styles.logoWrapper}>
           <Logo />
         </div>
-        
+
         <div className={styles.actions}>
           <div className={styles.timer}>
             <p className={styles.timerLabel}>61% discount reserved for:</p>
             <p className={styles.timerValue}>{formatTime(timeLeft)}</p>
           </div>
-          
-          <Button 
-            variant="primary" 
+
+          <Button
+            variant="primary"
             onClick={handleGetPlan}
             className={styles.ctaButton}
           >

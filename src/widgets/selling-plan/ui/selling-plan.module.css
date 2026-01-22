@@ -202,9 +202,6 @@
     max-width: 100%;
   }
 
-  .chevrons {
-    transform: rotate(90deg);
-  }
 
   .details {
     flex-direction: column;

@@ -6,7 +6,7 @@ import styles from "./selling-success.module.css";
 
 const successStories = [
   {
-    name: "Emma, 28, New York",
+    name: "Emma, 67, London",
     image: "/assets/testimonials/1.jpg",
     story: "After completing Skillescape's AI automation course, I quit my retail job and now run my own freelance business. I build custom AI solutions for small businesses and consistently earn $6K+ monthly. Best career decision ever!",
   },

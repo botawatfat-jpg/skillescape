@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/shared/ui";
 import { useQuizStore } from "@/shared/store";
 import styles from "./selling-cta.module.css";
@@ -171,11 +172,13 @@ export const SellingCTA: React.FC = () => {
 
         {/* Payment Methods */}
         <div className={styles.paymentMethods}>
-          <span className={styles.paymentMethod}>Apple Pay</span>
-          <span className={styles.paymentMethod}>Visa</span>
-          <span className={styles.paymentMethod}>Mastercard</span>
-          <span className={styles.paymentMethod}>Maestro</span>
-          <span className={styles.paymentMethod}>Amex</span>
+          <Image
+            src="/assets/payment-methods.png"
+            alt="Payment methods: Apple Pay, Visa, Mastercard, Maestro, Discover, American Express"
+            width={232}
+            height={16}
+            className={styles.paymentMethodsImage}
+          />
         </div>
 
         {/* Money-Back Guarantee */}

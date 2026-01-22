@@ -96,13 +96,15 @@
   font-size: 18px;
   line-height: 28px;
   color: #032e15;
+  position: relative;
+  bottom: -6px;
 }
 
 .timerLabels {
   display: flex;
   gap: 8px;
-  position: absolute;
-  bottom: 8px;
+  position: relative;
+  bottom: 4px;
 }
 
 .timerLabel {
@@ -144,7 +146,6 @@
 }
 
 .plan.popular {
-  border-color: #2563eb;
 }
 
 .popularBadge {
@@ -154,12 +155,19 @@
   transform: translateX(-50%);
   background: #2563eb;
   color: #ffffff;
-  padding: 4px 16px;
-  border-radius: 12px;
+  padding: 4px 0;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 16px;
+  width: 102.5%;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .planHeader {
@@ -319,9 +327,13 @@
 /* Payment Methods */
 .paymentMethods {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+}
+
+.paymentMethodsImage {
+  display: block;
+  height: auto;
 }
 
 .paymentMethod {
@@ -409,7 +421,7 @@
 
   .timerLabels {
     gap: 6px;
-    bottom: 6px;
+    bottom: 2px;
   }
 
   .plans {
@@ -417,30 +429,55 @@
   }
 
   .plan {
-    padding: 20px;
+    padding: 12px;
+    
   }
 
-  .planName {
-    font-size: 16px;
-    line-height: 24px;
+  .plan.popular {
+    padding-top: 46px;
   }
+
+.popularBadge {
+
+  padding: 10px 0px;
+  width: 100%;
+  top: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
   .planPrice {
     margin-bottom: 12px;
   }
 
+  .originalPrice {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .discountedPrice {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
   .planDivider {
-    margin: 12px 0;
+    display: none;
+  }
+
+  .perDayOriginal {
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .perDayAmount {
-    font-size: 20px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .perDayLabel {
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .ctaButton {
@@ -457,12 +494,8 @@
     font-size: 13px;
   }
 
-  .paymentMethods {
-    gap: 8px;
-  }
-
-  .paymentMethod {
-    font-size: 11px;
-    padding: 4px 8px;
+  .paymentMethodsImage {
+    max-width: 100%;
+    height: auto;
   }
 }
