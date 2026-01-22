@@ -41,22 +41,17 @@ export const QuizPage55 = () => {
             return;
         }
 
-        // Validate checkbox
-        if (!agreeToReceive) {
-            setCheckboxError("Please agree to receive updates");
-            return;
-        }
 
         // All validations passed
         updateQuizData({ email, agreeToReceive });
-        
+
         // GTM: Отслеживаем отправку лида (email capture)
         // Событие сработает только один раз за сессию
         // ВАЖНО: передаём quiz_id для атрибуции и A/B тестов
         const quizId = quizData.quizId || "unknown";
         trackLeadSubmit("quiz_email", quizId);
         trackFormSubmit("quiz_email_form");
-        
+
         router.push("/quiz/questions?pageId=56");
     };
 
@@ -96,7 +91,7 @@ export const QuizPage55 = () => {
                                 }}
                                 className={`${styles.checkbox} ${checkboxError ? styles.checkboxError : ""}`}
                             />
-                            <span>I agree to receive latest updates and tips on earning with AI from Jobescape</span>
+                            <span>I agree to receive latest updates and tips on earning with AI from Skillescape</span>
                         </label>
                         {checkboxError && (
                             <span className={styles.errorText}>{checkboxError}</span>

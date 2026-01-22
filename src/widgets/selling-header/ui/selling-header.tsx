@@ -1,32 +1,34 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Logo } from "@/shared/ui";
+import { Logo, Button } from "@/shared/ui";
 import styles from "./selling-header.module.css";
 
 export const SellingHeader: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    minutes: 9,
-    seconds: 55,
-  });
+  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { minutes: prev.minutes - 1, seconds: 59 };
-        }
-        return { minutes: 0, seconds: 0 };
-      });
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (value: number) => {
-    return value.toString().padStart(2, "0");
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  };
+
+  const handleGetPlan = () => {
+    // Scroll to pricing section with offset for fixed header
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      const yOffset = -100; // offset for fixed header
+      const y = pricingSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
 
   return (
@@ -35,18 +37,20 @@ export const SellingHeader: React.FC = () => {
         <div className={styles.logoWrapper}>
           <Logo />
         </div>
-
-        <div className={styles.rightContent}>
-          <div className={styles.discountInfo}>
-            <p className={styles.discountText}>61% discount reserved for:</p>
-            <p className={styles.timer}>
-              {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
-            </p>
+        
+        <div className={styles.actions}>
+          <div className={styles.timer}>
+            <p className={styles.timerLabel}>61% discount reserved for:</p>
+            <p className={styles.timerValue}>{formatTime(timeLeft)}</p>
           </div>
-
-          <button className={styles.ctaButton}>
+          
+          <Button 
+            variant="primary" 
+            onClick={handleGetPlan}
+            className={styles.ctaButton}
+          >
             GET MY PLAN
-          </button>
+          </Button>
         </div>
       </div>
     </header>

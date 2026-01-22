@@ -29,7 +29,7 @@ export const QuizPage31 = () => {
 
         <div className={styles.imageContainer}>
           <Image
-            src="https://d2tpw6ibsnrlae.cloudfront.net/quiz_prod/v6.0.7/34/media/teaser-19-2.webp"
+            src="/assets/quiz/quiz39-1.png"
             alt="Skillescape AI toolbox"
             width={576}
             height={432}

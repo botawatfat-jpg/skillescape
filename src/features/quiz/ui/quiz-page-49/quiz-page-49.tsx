@@ -123,7 +123,15 @@ export const QuizPage49 = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <div className={styles.imageContainer}>
+                            <Image
+                                src="/assets/quiz/quiz49-1.png"
+                                alt="Summary illustration"
+                                width={400}
+                                height={400}
+                                className={styles.image}
+                            />
+                        </div>
 
                     </div>
                 </div>

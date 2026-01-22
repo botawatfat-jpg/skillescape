@@ -1,75 +1,41 @@
-.wrapper {
-  display: inline-flex;
-  align-items: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.heading {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: stretch;
-  padding: 0 35.75px 0 35.73px;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.title {
+.titleWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  margin-top: -1px;
-  position: relative;
-  text-align: center;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 40px;
-  letter-spacing: 0;
+  width: 100%;
 }
 
-.regular {
+.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  color: #0a0a0a;
+  text-align: center;
+  margin: 0;
+  max-width: 823px;
+}
+
+.name {
   color: #0a0a0a;
 }
 
-.highlighted {
+.highlight {
   color: #2563eb;
 }
 
-/* Tablet */
+/* Responsive */
 @media (max-width: 768px) {
-  .title {
-    font-size: 32px;
-    line-height: 38px;
-  }
-
-  .heading {
-    padding: 0 24px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
   .title {
     font-size: 28px;
     line-height: 34px;
   }
-
-  .heading {
-    padding: 0 16px;
-  }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
   .title {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .heading {
-    padding: 0 12px;
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 100%;
   }
 }

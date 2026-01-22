@@ -5,13 +5,10 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/shared/ui";
 import { QuizTitle } from "@/features/quiz/shared";
 import styles from "./quiz-page-46.module.css";
-import { useQuizStore } from "@/shared/store";
-import Lottie from "lottie-react";
-import teaserAnimation from "../../../../../public/assets/quiz/teaser.json";
+import Image from "next/image";
 
 export const QuizPage46 = () => {
     const router = useRouter();
-    const { quizData } = useQuizStore();
 
     const handleContinue = () => {
         router.push("/quiz/questions?pageId=47");
@@ -26,7 +23,7 @@ export const QuizPage46 = () => {
 
 
                 <div className={styles.lotteContainer}>
-                    <Lottie animationData={teaserAnimation} loop={true} className={styles.lottie} />
+                    <Image src="/assets/quiz/quiz45-1.png" alt="Quiz 45" width={506} height={320} />
 
                 </div>
 

@@ -89,6 +89,9 @@ interface QuizStore {
   updateQuizData: (data: Partial<QuizData>) => void;
   resetQuizData: () => void;
   generateQuizId: () => string;
+  isPaymentModalOpen: boolean;
+  openPaymentModal: () => void;
+  closePaymentModal: () => void;
 }
 
 // Генерация уникального ID для квиза
@@ -118,6 +121,9 @@ export const useQuizStore = create<QuizStore>()(
         }));
         return newId;
       },
+      isPaymentModalOpen: false,
+      openPaymentModal: () => set({ isPaymentModalOpen: true }),
+      closePaymentModal: () => set({ isPaymentModalOpen: false }),
     }),
     {
       name: "quiz-storage",

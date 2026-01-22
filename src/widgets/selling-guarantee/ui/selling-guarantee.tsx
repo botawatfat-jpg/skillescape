@@ -1,50 +1,30 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./selling-guarantee.module.css";
+
+const SHIELD_ICON = "data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 4L8 10V22C8 32 15.2 41.2 24 44C32.8 41.2 40 32 40 22V10L24 4Z' fill='%2315803D'/%3E%3Cpath d='M18 24L22 28L30 18' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
 
 export const SellingGuarantee: React.FC = () => {
   return (
-    <>
-      <Image
-        src="https://d2tpw6ibsnrlae.cloudfront.net/local_components/4/media/container.svg"
-        alt="Trusted brands"
-        width={896}
-        height={100}
-        className={styles.brandsImage}
-      />
-
-      <div className={styles.wrapper}>
-        <div className={styles.border}>
-          <div className={styles.iconWrapper}>
-            <div className={styles.shieldCheck} />
-          </div>
-
-          <div className={styles.titleWrapper}>
-            <div className={styles.title}>30-day Money-Back Guarantee</div>
-          </div>
-
-          <div className={styles.descriptionWrapper}>
-            <div className={styles.description}>
-              <p className={styles.textMain}>
-                We are so confident in our service that we are ready to offer a
-                full refund within
-                <br />
-                30 days of purchase if you do not achieve initial results and
-                can demonstrate
-                <br />
-                you have followed the plan. Learn more about all the conditions
-                in our
-              </p>
-              <p className={styles.linkText}>
-                <span className={styles.link}>Subscription Terms</span>
-                <span className={styles.period}>.</span>
-              </p>
-            </div>
-          </div>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.iconWrapper}>
+          <img src={SHIELD_ICON} alt="" width={48} height={48} />
         </div>
+        
+        <h2 className={styles.title}>30-day Money-Back Guarantee</h2>
+        
+        <p className={styles.description}>
+          We are so confident in our service that we are ready to offer a full refund within 
+          30 days of purchase if you do not achieve initial results and can demonstrate you 
+          have followed the plan.{" "}
+          <Link href="/terms/subscription" className={styles.link}>
+            Learn more about all the conditions in our Subscription Terms
+          </Link>
+        </p>
       </div>
-    </>
+    </section>
   );
 };

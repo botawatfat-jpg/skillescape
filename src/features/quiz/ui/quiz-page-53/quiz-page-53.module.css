@@ -55,7 +55,7 @@
 
 .chartContainer {
     width: 100%;
-    max-width: 576px;
+    max-width: 480px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -63,7 +63,7 @@
 .chartWrapper {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 340px;
 }
 
 .button {
@@ -106,7 +106,7 @@
     }
 
     .chartWrapper {
-        height: 350px;
+        height: 300px;
     }
 
     .button {
@@ -155,7 +155,7 @@
     }
 
     .chartWrapper {
-        height: 280px;
+        height: 240px;
     }
 
     .button {
@@ -179,6 +179,6 @@
     }
 
     .chartWrapper {
-        height: 250px;
+        height: 220px;
     }
 }

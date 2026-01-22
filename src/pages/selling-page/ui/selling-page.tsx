@@ -1,23 +1,30 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { SellingHeader } from "@/widgets/selling-header";
-import { SellingHero } from "@/widgets/selling-hero";
-import { SellingStats } from "@/widgets/selling-stats";
-import { SellingTitle } from "@/widgets/selling-title";
-import { SellingPromo } from "@/widgets/selling-promo";
-import { SellingPlans } from "@/widgets/selling-plans";
-import { SellingCTA } from "@/widgets/selling-cta";
-import { SellingGuarantee } from "@/widgets/selling-guarantee";
 import { useAnalytics } from "@/shared/lib/analytics";
 import { useQuizStore } from "@/shared/store";
+import { SellingHeader } from "@/widgets/selling-header";
+import { SellingPlan } from "@/widgets/selling-plan";
+import { SellingPlanMobile } from "@/widgets/selling-plan-mobile";
+import { SellingStats } from "@/widgets/selling-stats";
+import { SellingTitle } from "@/widgets/selling-title";
+import { SellingPricing } from "@/widgets/selling-pricing";
+import { SellingGuarantee } from "@/widgets/selling-guarantee";
+import { SellingTools } from "@/widgets/selling-tools";
+import { SellingHighlights } from "@/widgets/selling-highlights";
+import { SellingSuccess } from "@/widgets/selling-success";
+import { SellingFAQ } from "@/widgets/selling-faq";
+import { SellingReviews } from "@/widgets/selling-reviews";
+import { SellingSocialProof } from "@/widgets/selling-social-proof";
+import { SellingCTA } from "@/widgets/selling-cta";
+import { SellingFooter } from "@/widgets/selling-footer";
+import { PaymentModal } from "@/widgets/payment-modal";
 import styles from "./selling-page.module.css";
 
 export const SellingPage: React.FC = () => {
   const { trackEvent } = useAnalytics();
   const { quizData } = useQuizStore();
 
-  // GTM: Отслеживаем просмотр продающей страницы с планом
   useEffect(() => {
     trackEvent("plan_view", {
       page_type: "selling_page",
@@ -32,21 +39,27 @@ export const SellingPage: React.FC = () => {
   }, [trackEvent, quizData]);
 
   return (
-    <>
+    <div className={styles.page}>
       <SellingHeader />
-      <main className={styles.container}>
-        <div className={styles.content}>
+      <main className={styles.main}>
+        <SellingPlan />
+        <div className={styles.pricingSection}>
+          <SellingPlanMobile />
           <SellingStats />
           <SellingTitle />
-          <div className={styles.section}>
-            <SellingPromo />
-            <SellingPlans />
-          </div>
-          <SellingCTA />
+          <SellingPricing />
           <SellingGuarantee />
         </div>
+        <SellingTools />
+        <SellingHighlights />
+        <SellingSuccess />
+        <SellingFAQ />
+        <SellingReviews />
+        <SellingSocialProof />
+        <SellingCTA />
       </main>
-      <SellingHero />
-    </>
+      <SellingFooter />
+      <PaymentModal />
+    </div>
   );
 };
