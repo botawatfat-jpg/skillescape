@@ -424,27 +424,26 @@
     bottom: 2px;
   }
 
+
   .plans {
     gap: 12px;
   }
 
   .plan {
     padding: 12px;
-    
   }
 
   .plan.popular {
     padding-top: 46px;
   }
 
-.popularBadge {
-
-  padding: 10px 0px;
-  width: 100%;
-  top: 0px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
+  .popularBadge {
+    padding: 10px 0px;
+    width: 100%;
+    top: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
   .planPrice {
     margin-bottom: 12px;
@@ -462,6 +461,10 @@
   }
 
   .planDivider {
+    display: none;
+  }
+
+  .perDay {
     display: none;
   }
 

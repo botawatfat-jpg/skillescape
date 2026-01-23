@@ -100,28 +100,39 @@
   position: relative;
 }
 
+.promoTimer {
+  background: #ffffff;
+  border: 1px solid #05df72;
+  border-radius: 14px;
+  width: 76px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  position: relative;
+}
+
 .timerValue {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
   color: #032e15;
+  position: relative;
+  bottom: -10px;
 }
-
-.timerLabels {
-  display: flex;
-  gap: 8px;
-  position: absolute;
-  bottom: 8px;
-}
-
 .timerLabel {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 10px;
   line-height: 16px;
   color: #737373;
+  position: relative;
+  bottom: 6px;
 }
+
 
 /* Pricing Plans */
 .plans {
@@ -154,7 +165,6 @@
 }
 
 .plan.popular {
-  border-color: #2563eb;
 }
 
 .popularBadge {
@@ -164,12 +174,19 @@
   transform: translateX(-50%);
   background: #2563eb;
   color: #ffffff;
-  padding: 4px 16px;
-  border-radius: 12px;
+  padding: 4px 0;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 16px;
+  width: 102.5%;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .planHeader {
@@ -481,106 +498,22 @@
   }
 
   .plan {
-    padding: 2px;
-    border-radius: 16px;
+    padding: 12px;
+    
   }
 
   .plan.popular {
-    border-color: #1a4eda;
-    border-width: 2px;
-    padding: 2px;
+    padding-top: 46px;
   }
 
-  .popularBadge {
-    position: static;
-    transform: none;
-    width: 100%;
-    background: #1a4eda;
-    border-radius: 0;
-    padding: 4px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
+.popularBadge {
 
-  .popularBadge::before {
-    content: '✓';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    background: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    font-size: 10px;
-  }
-
-  .plan.popular .planHeader,
-  .plan.popular .planPrice,
-  .plan.popular .planDivider,
-  .plan.popular .perDay {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .plan.popular .planHeader {
-    padding-top: 12px;
-  }
-
-  .plan.popular .perDay {
-    padding-bottom: 12px;
-  }
-
-  .planHeader {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-  }
-
-  .planName {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-  }
-
-  .checkbox {
-    background: #1a4eda;
-    border-color: #1a4eda;
-  }
-
-  .plan.selected .checkbox,
-  .plan.popular .checkbox {
-    background: #1a4eda;
-    border-color: #1a4eda;
-  }
-
-  .checkboxChecked {
-    width: 14px;
-    height: 14px;
-    background: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 2px;
-    position: relative;
-  }
-
-  .checkboxChecked::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
-  }
+  padding: 10px 0px;
+  width: 100%;
+  top: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
   .planPrice {
     margin-bottom: 12px;

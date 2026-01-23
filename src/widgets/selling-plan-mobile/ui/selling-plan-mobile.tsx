@@ -40,13 +40,13 @@ export const SellingPlanMobile: React.FC = () => {
         <div className={styles.chevrons}>
           <img src={CHEVRONS_ICON} alt="" width={32} height={19} className={styles.chevronDesktop} />
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="19" viewBox="0 0 32 19" fill="none" className={styles.chevronMobile}>
-            <g clip-path="url(#clip0_19_2792)">
-              <path d="M1.52344 16.7586L9.14249 9.13956L1.52344 1.52051" stroke="#2563EB" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M1.52344 16.7586L9.14249 9.13956L1.52344 1.52051" stroke="white" stroke-opacity="0.5" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12.1904 16.7586L19.8095 9.13956L12.1904 1.52051" stroke="#2563EB" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12.1904 16.7586L19.8095 9.13956L12.1904 1.52051" stroke="white" stroke-opacity="0.5" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M22.8574 16.7586L30.4765 9.13956L22.8574 1.52051" stroke="#2563EB" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M22.8574 16.7586L30.4765 9.13956L22.8574 1.52051" stroke="white" stroke-opacity="0.5" stroke-width="3.04762" stroke-linecap="round" stroke-linejoin="round" />
+            <g clipPath="url(#clip0_19_2792)">
+              <path d="M1.52344 16.7586L9.14249 9.13956L1.52344 1.52051" stroke="#2563EB" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M1.52344 16.7586L9.14249 9.13956L1.52344 1.52051" stroke="white" strokeOpacity="0.5" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12.1904 16.7586L19.8095 9.13956L12.1904 1.52051" stroke="#2563EB" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12.1904 16.7586L19.8095 9.13956L12.1904 1.52051" stroke="white" strokeOpacity="0.5" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M22.8574 16.7586L30.4765 9.13956L22.8574 1.52051" stroke="#2563EB" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M22.8574 16.7586L30.4765 9.13956L22.8574 1.52051" stroke="white" strokeOpacity="0.5" strokeWidth="3.04762" strokeLinecap="round" strokeLinejoin="round" />
             </g>
             <defs>
               <clipPath id="clip0_19_2792">
